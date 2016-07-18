@@ -20,12 +20,12 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDataFromJson()
+        getDataFromJson(url)
 
         // Do any additional setup after loading the view.
     }
 
-    func getDataFromJson(){
+    func getDataFromJson(url:String){
         let request = NSURLRequest(URL: NSURL(string: url)!)
         let urlSesion = NSURLSession.sharedSession()
         
@@ -50,8 +50,6 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     
-        
-        
         func parseJsonData(data:NSData) -> [Weather]{
             do{
                 let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
