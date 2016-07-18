@@ -589,23 +589,6 @@
             </objects>
             <point key="canvasLocation" x="-465" y="687"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Xqp-Ux-972">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jmd-Dy-EIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Utu-XP-gaQ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="e17-w0-PqF"/>
-                        <viewControllerLayoutGuide type="bottom" id="jXo-0U-5nj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dsQ-Ry-uvb">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-465" y="1371"/>
-        </scene>
         <!--Hourly View Controller-->
         <scene sceneID="a3V-N8-7fp">
             <objects>
@@ -815,14 +798,121 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="4MN-N1-lep">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="50" id="4MN-N1-lep" customClass="CustomTableViewCell" customModule="Weather" customModuleProvider="target">
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4MN-N1-lep" id="Eh2-Al-4yh">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7b-ek-Rv8">
+                                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storm" translatesAutoresizingMaskIntoConstraints="NO" id="Cj6-v9-1KJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="49" id="XOM-3e-lfk"/>
+                                                                <constraint firstAttribute="height" constant="49" id="t51-F4-6uw"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="XOM-3e-lfk"/>
+                                                                    <exclude reference="t51-F4-6uw"/>
+                                                                </mask>
+                                                            </variation>
+                                                            <variation key="widthClass=compact">
+                                                                <mask key="constraints">
+                                                                    <include reference="XOM-3e-lfk"/>
+                                                                    <include reference="t51-F4-6uw"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGc-5R-Zga">
+                                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Storm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr7-M5-kOw">
+                                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Kr7-M5-kOw" secondAttribute="bottom" constant="14" id="Bcq-Ig-lTi"/>
+                                                        <constraint firstItem="Cj6-v9-1KJ" firstAttribute="leading" secondItem="e7b-ek-Rv8" secondAttribute="trailing" constant="25" id="FFe-sk-h3b"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UGc-5R-Zga" secondAttribute="bottom" constant="14" id="JDe-Wf-UHH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Cj6-v9-1KJ" secondAttribute="bottom" id="PMI-ol-3DA"/>
+                                                        <constraint firstItem="Cj6-v9-1KJ" firstAttribute="top" secondItem="Eh2-Al-4yh" secondAttribute="top" id="Pns-tI-bJw"/>
+                                                        <constraint firstItem="Kr7-M5-kOw" firstAttribute="top" secondItem="Eh2-Al-4yh" secondAttribute="top" constant="14" id="TM2-wc-8bf"/>
+                                                        <constraint firstItem="UGc-5R-Zga" firstAttribute="top" secondItem="Eh2-Al-4yh" secondAttribute="top" constant="14" id="afC-6e-grU"/>
+                                                        <constraint firstItem="e7b-ek-Rv8" firstAttribute="top" secondItem="Eh2-Al-4yh" secondAttribute="top" constant="14" id="eMD-Bz-2Cd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UGc-5R-Zga" secondAttribute="trailing" constant="10" id="g2K-4W-7vE"/>
+                                                        <constraint firstItem="Kr7-M5-kOw" firstAttribute="leading" secondItem="Cj6-v9-1KJ" secondAttribute="trailing" constant="35" id="gHh-6d-kyp"/>
+                                                        <constraint firstItem="e7b-ek-Rv8" firstAttribute="leading" secondItem="Eh2-Al-4yh" secondAttribute="leading" constant="20" id="oWa-cX-QIA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="e7b-ek-Rv8" secondAttribute="bottom" constant="14" id="tgk-s7-xn7"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="e7b-ek-Rv8"/>
+                                                            <exclude reference="Cj6-v9-1KJ"/>
+                                                            <exclude reference="UGc-5R-Zga"/>
+                                                            <exclude reference="Kr7-M5-kOw"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <exclude reference="eMD-Bz-2Cd"/>
+                                                            <exclude reference="oWa-cX-QIA"/>
+                                                            <exclude reference="tgk-s7-xn7"/>
+                                                            <exclude reference="FFe-sk-h3b"/>
+                                                            <exclude reference="PMI-ol-3DA"/>
+                                                            <exclude reference="Pns-tI-bJw"/>
+                                                            <exclude reference="Bcq-Ig-lTi"/>
+                                                            <exclude reference="TM2-wc-8bf"/>
+                                                            <exclude reference="gHh-6d-kyp"/>
+                                                            <exclude reference="JDe-Wf-UHH"/>
+                                                            <exclude reference="afC-6e-grU"/>
+                                                            <exclude reference="g2K-4W-7vE"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="subviews">
+                                                            <include reference="e7b-ek-Rv8"/>
+                                                            <include reference="Cj6-v9-1KJ"/>
+                                                            <include reference="UGc-5R-Zga"/>
+                                                            <include reference="Kr7-M5-kOw"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <include reference="eMD-Bz-2Cd"/>
+                                                            <include reference="oWa-cX-QIA"/>
+                                                            <include reference="tgk-s7-xn7"/>
+                                                            <include reference="FFe-sk-h3b"/>
+                                                            <include reference="PMI-ol-3DA"/>
+                                                            <include reference="Pns-tI-bJw"/>
+                                                            <include reference="Bcq-Ig-lTi"/>
+                                                            <include reference="TM2-wc-8bf"/>
+                                                            <include reference="gHh-6d-kyp"/>
+                                                            <include reference="JDe-Wf-UHH"/>
+                                                            <include reference="afC-6e-grU"/>
+                                                            <include reference="g2K-4W-7vE"/>
+                                                        </mask>
+                                                    </variation>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imageForWeather" destination="Cj6-v9-1KJ" id="rEO-OG-mX2"/>
+                                                    <outlet property="labelForHour" destination="e7b-ek-Rv8" id="bfK-cS-5Jm"/>
+                                                    <outlet property="labelForTemperature" destination="UGc-5R-Zga" id="bQp-vf-JGI"/>
+                                                    <outlet property="labelForTypeWeather" destination="Kr7-M5-kOw" id="4ow-rh-7PP"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="vGF-oU-4xZ" id="AIN-GS-EZq"/>
+                                            <outlet property="delegate" destination="vGF-oU-4xZ" id="N87-S9-9KI"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -897,6 +987,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="KbC-lP-QvZ" id="mJh-pU-lqd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlh-It-8tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1234,6 +1327,7 @@
         <image name="Circled Right 2-58" width="58" height="58"/>
         <image name="Menu-for-change-city" width="30" height="30"/>
         <image name="Menu-for-setting" width="30" height="30"/>
+        <image name="storm" width="128" height="128"/>
         <image name="sun" width="64" height="64"/>
     </resources>
 </document>
