@@ -60,13 +60,13 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
                         
                         
                         if let time = data["FCTTIME"] as? NSDictionary{
-                            dataAboutWeather.hour = time["hour"] as! String
+                            dataAboutWeather.hour = time["hour"] as? String
                         }
                         if let temp = data["temp"] as? NSDictionary{
-                            dataAboutWeather.temperature = temp["metric"] as! String
+                            dataAboutWeather.temperature = temp["metric"] as? String
                         }
-                        dataAboutWeather.humidity = data["humidity"] as! String
-                        dataAboutWeather.typeWeather = data["condition"] as! String
+                        dataAboutWeather.humidity = data["humidity"] as? String
+                        dataAboutWeather.typeWeather = data["condition"] as? String
                         weather.append(dataAboutWeather)
                     }
                     
