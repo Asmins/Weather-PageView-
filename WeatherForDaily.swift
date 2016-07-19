@@ -15,7 +15,9 @@ class WeatherForDaily: NSManagedObject {
     
     @NSManaged var date: String?
     @NSManaged var lowTemperature: String?
-    @NSManaged var highTemperature: UNKNOWN_TYPE
-    @NSManaged var typeWeather: UNKNOWN_TYPE
+    @NSManaged var highTemperature: String?
+    @NSManaged var typeWeather: String?
 
+    
+    
 }

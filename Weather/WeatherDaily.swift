@@ -8,17 +8,14 @@
 
 import Foundation
 
-class Weather{
+class WeatherDaily{
 
-    var hour = " "
-    var temperatureForHourly = " "
-    var temperatureForDay = " "
-    var typeWeatherForHourly = " "
     var typeWeatherForDaily = " "
-    var typeWeatherForDay = " "
     var lowTemperature = " "
     var highTemperature = " "
-    var date = " "
-    var humidity = " "
+    var day = 0
+    var month = 0
+    var humidity = 0
+    var wind_speed = 0
     var uvIndex = " "
 }

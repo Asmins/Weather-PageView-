@@ -25,7 +25,6 @@ class NowViewController: UIViewController {
                                                                             //(lat),(lon)
     let urlHourly = "http://api.wunderground.com/api/4ed7dad052717db4/hourly/q/34,-118.json"
     let urlDaily = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/34,-118.json"
-    let urlCurrent = "http://api.wunderground.com/api/4ed7dad052717db4/forecast/q/34,-118.json"
     
     
     var data = DataForBD()
@@ -34,6 +33,8 @@ class NowViewController: UIViewController {
         super.viewDidLoad()
         
         data.getDataAboutWeather(urlDaily)
+        
+        data.getDataAboutWeather(urlHourly)
     }
 
     

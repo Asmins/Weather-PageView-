@@ -7,13 +7,13 @@
 //
 
 import Foundation
-
+import CoreData
 
 class DataForBD{
  
     
-    var weather  = [Weather]()
-    
+    var weatherDaily  = [WeatherDaily]()
+    var weatherHoury = [WeatherHourly]()
     
     var arrayUrl = [String]()
     
@@ -28,8 +28,8 @@ class DataForBD{
                 return
             }
             if let data = data{
-                self.weather = self.parseJsonData(data)
-                
+                self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
+                self.weatherHoury = self.parseJsonDataForWeatherHourly(data)
             }
             
             
@@ -41,32 +41,60 @@ class DataForBD{
     }
     
     
-    func parseJsonData(data:NSData) -> [Weather]{
+    func parseJsonDataForWeatherHourly(data:NSData) -> [WeatherHourly ]{
         do{
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
             if let root = jsonResult!["hourly_forecast"] as? NSArray{
                 for data in root{
                     
-                    let dataAboutWeather = Weather()
+                    let dataAboutWeather = WeatherHourly()
                     
                     
                     if let time = data["FCTTIME"] as? NSDictionary{
-                        dataAboutWeather.hour = time["hour"] as? String
+                        dataAboutWeather.hour = time["hour"] as! String
                     }
                     if let temp = data["temp"] as? NSDictionary{
-                        dataAboutWeather.temperature = temp["metric"] as? String
+                        dataAboutWeather.temperature = temp["metric"] as! String
                     }
-                    dataAboutWeather.humidity = data["humidity"] as? String
-                    dataAboutWeather.typeWeather = data["condition"] as? String
-                    weather.append(dataAboutWeather)
+                    dataAboutWeather.typeWeather = data["condition"] as! String
+                    weatherHoury.append(dataAboutWeather)
+                    
                 }
                 
-                weather[0...9] = []
-            }else if let root = jsonResult!["forecast"] as? [String:AnyObject]{
-                if let simpleForecast = root["simpleforecast"] as? [String:AnyObject]{
-                    if let forecastday = simpleForecast["forecastday"] as? [[String:AnyObject]]{
-                        for data in forecastday{
+                weatherHoury[0...9] = []
+            }
+        }catch{
+            print(error)
+        }
+        return weatherHoury
+    }
+    
+    func parseJsonDataForWeatherDaily(data:NSData) -> [WeatherDaily ]{
+        do{
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+            if let root = jsonResult?["forecast"] as? [String:AnyObject] {
+                if let simpleforecastItem = root["simpleforecast"] as? [String:AnyObject]{
+                    if let forecastday = simpleforecastItem["forecastday"] as? [[String:AnyObject]] {
                         
+                        for data in forecastday {
+                            let dataAboutWeather = WeatherDaily()
+                            if let date = data["date"] as? [String:AnyObject]{
+                                dataAboutWeather.day = date["day"] as! Int
+                                dataAboutWeather.month = date["month"] as! Int
+                            }
+                        
+                            if let high = data["high"] as? [String:AnyObject]{
+                                dataAboutWeather.highTemperature = high["celsius"] as! String
+                            }
+                            if let low  = data["low"] as? [String:AnyObject]{
+                                dataAboutWeather.lowTemperature = low["celsius"] as! String
+                            }
+                            if let windSpeed = data["avewind"] as? [String:AnyObject]{
+                                dataAboutWeather.wind_speed = windSpeed["kph"] as! Int
+                             }
+                            dataAboutWeather.typeWeatherForDaily = data["conditions"] as! String
+                            dataAboutWeather.humidity = data["avehumidity"] as! Int
+                            weatherDaily.append(dataAboutWeather)
                         }
                     }
                 }
@@ -74,7 +102,7 @@ class DataForBD{
         }catch{
             print(error)
         }
-        return weather
+        return weatherDaily
     }
     
 }
