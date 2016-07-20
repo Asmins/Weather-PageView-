@@ -32,8 +32,9 @@ class DataForBD{
                 return
             }
             if let data = data{
-                self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
                 self.weatherHoury = self.parseJsonDataForWeatherHourly(data)
+                
+                self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
             }
         })
         
@@ -66,8 +67,33 @@ class DataForBD{
         }catch{
             print(error)
         }
+        
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+            hourly = NSEntityDescription.insertNewObjectForEntityForName("WeatherForHourly", inManagedObjectContext: managedObjectContext) as! WeatherForHourly
+            
+            for value in weatherHoury{
+                hourly.hour = value.hour
+                hourly.temperature = value.temperature
+                hourly.typeWeather = value.typeWeather
+            }
+            
+            do{
+                if weatherHoury.count == 0{
+                print("No data for Save Hourly")
+            }else{
+                try managedObjectContext.save()
+                print("Save data")
+                }
+            }
+            catch{
+                print(error)
+            }
+            
+        }
+        
         return weatherHoury
     }
+    
     
     func parseJsonDataForWeatherDaily(data:NSData) -> [WeatherDaily ]{
         do{
@@ -102,6 +128,7 @@ class DataForBD{
         }catch{
             print(error)
         }
+        
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
             daily = NSEntityDescription.insertNewObjectForEntityForName("WeatherForDaily", inManagedObjectContext: managedObjectContext) as! WeatherForDaily
             current = NSEntityDescription.insertNewObjectForEntityForName("WeatherForCurrent", inManagedObjectContext: managedObjectContext) as! WeatherForCurrent
@@ -118,8 +145,12 @@ class DataForBD{
             }
             
             do{
+                if weatherDaily.count == 0{
+                    print("No data for save Daily")
+                }else{
                 try managedObjectContext.save()
-                print("SAVE")
+                    print("Save data")
+                }
             }
             catch{
                 print(error)

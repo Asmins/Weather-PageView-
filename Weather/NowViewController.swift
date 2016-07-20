@@ -32,8 +32,8 @@ class NowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        data.getDataAboutWeather(urlDaily)
         data.getDataAboutWeather(urlHourly)
+        data.getDataAboutWeather(urlDaily)
     }
 
     
