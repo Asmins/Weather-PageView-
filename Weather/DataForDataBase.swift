@@ -8,12 +8,16 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 class DataForBD{
  
     
     var weatherDaily  = [WeatherDaily]()
     var weatherHoury = [WeatherHourly]()
+    
+    var hourly: WeatherForHourly!
+    var daily:WeatherForDaily!
+    var current:WeatherForCurrent!
     
     var arrayUrl = [String]()
     
@@ -31,13 +35,9 @@ class DataForBD{
                 self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
                 self.weatherHoury = self.parseJsonDataForWeatherHourly(data)
             }
-            
-            
         })
         
         task.resume()
-        
-        
     }
     
     
@@ -101,6 +101,30 @@ class DataForBD{
             }
         }catch{
             print(error)
+        }
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+            daily = NSEntityDescription.insertNewObjectForEntityForName("WeatherForDaily", inManagedObjectContext: managedObjectContext) as! WeatherForDaily
+            current = NSEntityDescription.insertNewObjectForEntityForName("WeatherForCurrent", inManagedObjectContext: managedObjectContext) as! WeatherForCurrent
+            
+            for val in weatherDaily{
+                daily.highTemperature = val.highTemperature
+                daily.lowTemperature = val.lowTemperature
+                daily.typeWeather = val.typeWeatherForDaily
+                daily.date = "\(val.day)/\(val.month)"
+                current.humidity = "\(weatherDaily[0].humidity)"
+                current.windSpeed = "\(weatherDaily[0].wind_speed)"
+                current.temperature = "\(weatherDaily[0].avarageTemperature)"
+                current.typeWeather = "\(weatherDaily[0].typeWeatherForDaily)"
+            }
+            
+            do{
+                try managedObjectContext.save()
+                print("SAVE")
+            }
+            catch{
+                print(error)
+            }
+            
         }
         return weatherDaily
     }

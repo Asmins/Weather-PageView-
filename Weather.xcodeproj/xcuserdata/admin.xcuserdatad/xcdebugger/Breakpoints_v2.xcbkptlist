@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather/NowViewController.swift"
-            timestampString = "490626810.470501"
+            filePath = "Weather/DataForDataBase.swift"
+            timestampString = "490695239.706863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "parseJsonDataForWeatherDaily(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

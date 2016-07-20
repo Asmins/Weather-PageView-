@@ -33,7 +33,6 @@ class NowViewController: UIViewController {
         super.viewDidLoad()
         
         data.getDataAboutWeather(urlDaily)
-        
         data.getDataAboutWeather(urlHourly)
     }
 
