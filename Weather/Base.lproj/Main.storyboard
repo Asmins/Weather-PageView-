@@ -64,49 +64,43 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vto-co-crd">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oik-lc-tKH">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUMIDITY:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bma-yg-X4N">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFb-qQ-JRB">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UV-INDEX:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilH-6r-phG">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modarate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gws-ts-iUv">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIND-SPEED:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaQ-7U-KIO">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 KM/H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-hK-uHd">
-                                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ3-xg-mAr">
@@ -135,7 +129,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kle-aW-jzW">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 KM/H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-hK-uHd">
+                                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -185,9 +185,9 @@
                                                 <exclude reference="ilH-6r-phG"/>
                                                 <exclude reference="Gws-ts-iUv"/>
                                                 <exclude reference="EaQ-7U-KIO"/>
-                                                <exclude reference="zSr-hK-uHd"/>
                                                 <exclude reference="BJ3-xg-mAr"/>
                                                 <exclude reference="kle-aW-jzW"/>
+                                                <exclude reference="zSr-hK-uHd"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="gjv-GU-IbG"/>
@@ -228,9 +228,9 @@
                                                 <include reference="ilH-6r-phG"/>
                                                 <include reference="Gws-ts-iUv"/>
                                                 <include reference="EaQ-7U-KIO"/>
-                                                <include reference="zSr-hK-uHd"/>
                                                 <include reference="BJ3-xg-mAr"/>
                                                 <include reference="kle-aW-jzW"/>
+                                                <include reference="zSr-hK-uHd"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="gjv-GU-IbG"/>
@@ -468,6 +468,10 @@
                                     <action selector="showHourlyView:" destination="tFd-Dt-Tuv" eventType="touchUpInside" id="QTW-Lj-Dhh"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kvl-jF-Qum">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <color key="color" red="0.0" green="0.1107608194" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -485,11 +489,14 @@
                             <constraint firstItem="eBm-fq-aaH" firstAttribute="top" secondItem="urE-kL-3Q0" secondAttribute="top" constant="10" id="KKi-9O-I0k"/>
                             <constraint firstAttribute="trailing" secondItem="2JL-08-PgS" secondAttribute="trailing" id="LUn-gx-TN0"/>
                             <constraint firstItem="SYt-bv-zwm" firstAttribute="top" secondItem="0GX-Z1-D37" secondAttribute="bottom" constant="16" id="MFG-DK-jNi"/>
+                            <constraint firstAttribute="trailing" secondItem="kvl-jF-Qum" secondAttribute="trailing" constant="190" id="NfY-gL-Nsg"/>
                             <constraint firstItem="eBm-fq-aaH" firstAttribute="leading" secondItem="urE-kL-3Q0" secondAttribute="leading" constant="10" id="SSW-CU-Uxy"/>
+                            <constraint firstItem="kvl-jF-Qum" firstAttribute="top" secondItem="PNG-vf-FWC" secondAttribute="bottom" constant="190" id="ZFr-ZJ-1bi"/>
                             <constraint firstItem="2JL-08-PgS" firstAttribute="top" secondItem="iQp-uR-JrM" secondAttribute="bottom" constant="10" id="a2b-jD-HqX"/>
                             <constraint firstItem="xmH-qE-6jg" firstAttribute="leading" secondItem="eBm-fq-aaH" secondAttribute="trailing" constant="24" id="c1W-mo-Wlz"/>
                             <constraint firstAttribute="trailing" secondItem="0GX-Z1-D37" secondAttribute="trailing" constant="10" id="ega-5F-avm"/>
                             <constraint firstItem="OXB-fw-6ta" firstAttribute="top" secondItem="2JL-08-PgS" secondAttribute="bottom" id="g8D-lM-Tqc"/>
+                            <constraint firstItem="kvl-jF-Qum" firstAttribute="leading" secondItem="urE-kL-3Q0" secondAttribute="leading" constant="190" id="hC9-pj-Poa"/>
                             <constraint firstItem="iQp-uR-JrM" firstAttribute="leading" secondItem="urE-kL-3Q0" secondAttribute="leading" constant="94" id="jcB-GN-e0h"/>
                             <constraint firstItem="SYt-bv-zwm" firstAttribute="leading" secondItem="iQp-uR-JrM" secondAttribute="trailing" constant="8" id="kop-fI-iTQ"/>
                             <constraint firstItem="I9e-dj-K2s" firstAttribute="leading" secondItem="urE-kL-3Q0" secondAttribute="leading" constant="10" id="s9L-HB-RVx"/>
@@ -507,9 +514,13 @@
                                 <exclude reference="xmH-qE-6jg"/>
                                 <exclude reference="I9e-dj-K2s"/>
                                 <exclude reference="iQp-uR-JrM"/>
+                                <exclude reference="kvl-jF-Qum"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="g8D-lM-Tqc"/>
+                                <exclude reference="NfY-gL-Nsg"/>
+                                <exclude reference="ZFr-ZJ-1bi"/>
+                                <exclude reference="hC9-pj-Poa"/>
                                 <exclude reference="FgC-YT-wOv"/>
                                 <exclude reference="ega-5F-avm"/>
                                 <exclude reference="IcS-i8-luL"/>
@@ -546,9 +557,13 @@
                                 <include reference="xmH-qE-6jg"/>
                                 <include reference="I9e-dj-K2s"/>
                                 <include reference="iQp-uR-JrM"/>
+                                <include reference="kvl-jF-Qum"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="g8D-lM-Tqc"/>
+                                <include reference="NfY-gL-Nsg"/>
+                                <include reference="ZFr-ZJ-1bi"/>
+                                <include reference="hC9-pj-Poa"/>
                                 <include reference="FgC-YT-wOv"/>
                                 <include reference="ega-5F-avm"/>
                                 <include reference="IcS-i8-luL"/>
@@ -577,6 +592,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activitityInd" destination="kvl-jF-Qum" id="ZTo-WV-GnK"/>
                         <outlet property="imageForTypeWeather" destination="ANi-eH-kbW" id="1Op-4d-ADx"/>
                         <outlet property="labelForHumidity" destination="oFb-qQ-JRB" id="xy1-vF-Q9e"/>
                         <outlet property="labelForTemperature" destination="Oik-lc-tKH" id="4oZ-0X-LZr"/>
@@ -807,7 +823,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7b-ek-Rv8">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storm" translatesAutoresizingMaskIntoConstraints="NO" id="Cj6-v9-1KJ">
@@ -832,13 +848,16 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGc-5R-Zga">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="203" y="14" width="27" height="21"/>
+                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Storm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr7-M5-kOw">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>

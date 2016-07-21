@@ -9,7 +9,7 @@
 import UIKit
 
 class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
-
+    
     
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newColoredViewController("Now"),self.newColoredViewController("Hourly"),self.newColoredViewController("Daily")]
@@ -21,7 +21,9 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
             instantiateViewControllerWithIdentifier("\(name)ViewController")
     }
     
+   
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
@@ -29,7 +31,8 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],direction: .Forward,animated: true,completion: nil)
         }
-    
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

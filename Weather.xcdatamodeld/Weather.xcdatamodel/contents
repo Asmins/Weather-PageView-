@@ -1,25 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G26a" minimumToolsVersion="Xcode 7.0">
-    <entity name="WeatherForCurrent" representedClassName=".WeatherForCurrent" syncable="YES">
-        <attribute name="humidity" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="temperature" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="typeWeather" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="windSpeed" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="WeatherForDaily" representedClassName=".WeatherForDaily" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="highTemperature" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lowTemperature" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="typeWeather" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="WeatherForHourly" representedClassName=".WeatherForHourly" syncable="YES">
-        <attribute name="hour" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="temperature" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="typeWeather" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <elements>
-        <element name="WeatherForHourly" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="WeatherForDaily" positionX="-54" positionY="-9" width="128" height="105"/>
-        <element name="WeatherForCurrent" positionX="-36" positionY="9" width="128" height="105"/>
-    </elements>
+    <elements/>
 </model>
