@@ -263,11 +263,37 @@
                                     </view>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPY-Ru-l4n">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZi-Vv-XDK">
+                                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.13124972751830288" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blJ-ea-ILj">
+                                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cju-a8-3hD">
+                                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="GZi-Vv-XDK" firstAttribute="top" secondItem="pPY-Ru-l4n" secondAttribute="top" constant="10" id="VT5-Yd-t1B"/>
+                                            <constraint firstItem="blJ-ea-ILj" firstAttribute="leading" secondItem="pPY-Ru-l4n" secondAttribute="leading" constant="10" id="pMk-R5-IPj"/>
+                                            <constraint firstItem="Cju-a8-3hD" firstAttribute="top" secondItem="blJ-ea-ILj" secondAttribute="bottom" constant="5" id="siJ-lq-L4J"/>
                                             <constraint firstAttribute="height" constant="120" id="xnh-My-tTV">
                                                 <variation key="widthClass=compact" constant="130"/>
                                             </constraint>
+                                            <constraint firstItem="GZi-Vv-XDK" firstAttribute="leading" secondItem="pPY-Ru-l4n" secondAttribute="leading" constant="10" id="yaa-6E-KrS"/>
+                                            <constraint firstItem="blJ-ea-ILj" firstAttribute="top" secondItem="GZi-Vv-XDK" secondAttribute="bottom" constant="10" id="zVX-Ww-sJr"/>
+                                            <constraint firstItem="Cju-a8-3hD" firstAttribute="leading" secondItem="pPY-Ru-l4n" secondAttribute="leading" constant="10" id="zmk-SJ-ZjH"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -275,13 +301,35 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="GZi-Vv-XDK"/>
+                                                <exclude reference="blJ-ea-ILj"/>
+                                                <exclude reference="Cju-a8-3hD"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <exclude reference="xnh-My-tTV"/>
+                                                <exclude reference="VT5-Yd-t1B"/>
+                                                <exclude reference="yaa-6E-KrS"/>
+                                                <exclude reference="pMk-R5-IPj"/>
+                                                <exclude reference="zVX-Ww-sJr"/>
+                                                <exclude reference="siJ-lq-L4J"/>
+                                                <exclude reference="zmk-SJ-ZjH"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="GZi-Vv-XDK"/>
+                                                <include reference="blJ-ea-ILj"/>
+                                                <include reference="Cju-a8-3hD"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <include reference="xnh-My-tTV"/>
+                                                <include reference="VT5-Yd-t1B"/>
+                                                <include reference="yaa-6E-KrS"/>
+                                                <include reference="pMk-R5-IPj"/>
+                                                <include reference="zVX-Ww-sJr"/>
+                                                <include reference="siJ-lq-L4J"/>
+                                                <include reference="zmk-SJ-ZjH"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -595,7 +643,9 @@
                         <outlet property="activitityInd" destination="kvl-jF-Qum" id="ZTo-WV-GnK"/>
                         <outlet property="imageForTypeWeather" destination="ANi-eH-kbW" id="1Op-4d-ADx"/>
                         <outlet property="labelForHumidity" destination="oFb-qQ-JRB" id="xy1-vF-Q9e"/>
-                        <outlet property="labelForTemperature" destination="Oik-lc-tKH" id="4oZ-0X-LZr"/>
+                        <outlet property="labelForNextDayForTemperature" destination="Cju-a8-3hD" id="7ro-kS-p0z"/>
+                        <outlet property="labelForNextDayTypeWeather" destination="blJ-ea-ILj" id="CZl-em-cCn"/>
+                        <outlet property="labelForTemperature" destination="Cju-a8-3hD" id="jQy-CE-fbt"/>
                         <outlet property="labelForTypeWeather" destination="vto-co-crd" id="Kwh-nb-3Zh"/>
                         <outlet property="labelForUvIndex" destination="Gws-ts-iUv" id="WHz-6w-zcK"/>
                         <outlet property="labelForWindSpeed" destination="zSr-hK-uHd" id="Id7-Fg-QCj"/>
