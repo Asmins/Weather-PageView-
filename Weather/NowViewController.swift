@@ -136,7 +136,6 @@ class NowViewController: UIViewController {
     
     @IBAction func moreDetail(sender: AnyObject) {
         
-        
     }
 
  
