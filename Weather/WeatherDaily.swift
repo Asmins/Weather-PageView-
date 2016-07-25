@@ -15,6 +15,8 @@ class WeatherDaily{
     var highTemperature = " "
     var day = 0
     var month = 0
+    var nameMonth = " "
+    var weekDay = " "
     var humidity = 0
     var wind_speed = 0
     var uvIndex = " "

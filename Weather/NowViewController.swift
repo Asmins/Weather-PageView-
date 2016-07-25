@@ -10,10 +10,10 @@ import UIKit
 
 class NowViewController: UIViewController {
 
+    @IBOutlet weak var labelForCurrentTemperature: UILabel!
     @IBOutlet weak var labelForTypeWeather: UILabel!
     @IBOutlet weak var labelForNextDayTypeWeather: UILabel!
     
-    @IBOutlet weak var labelForTemperature: UILabel!
     
     @IBOutlet weak var labelForNextDayForTemperature: UILabel!
     @IBOutlet weak var labelForHumidity: UILabel!
@@ -37,7 +37,7 @@ class NowViewController: UIViewController {
         super.viewDidLoad()
         getDataAboutWeather(urlDaily)
         getDataAboutWeather(urlUvIndex)
-        let alert = UIAlertController(title: "Alert", message: "Please wait 5 or 10 seconds for load data weather", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Hello", message: "Please wait 5 or 10 seconds for load data weather", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default, handler: {action in
             switch action.style{
@@ -45,9 +45,9 @@ class NowViewController: UIViewController {
                 self.labelForWindSpeed.text = "\(self.weatherDaily[0].wind_speed) KM/H"
                 self.labelForHumidity.text = "\(self.weatherDaily[0].humidity)%"
                 self.labelForTypeWeather.text = self.weatherDaily[0].typeWeatherForDaily
-                self.labelForTemperature.text = "\(self.weatherDaily[0].avarageTemperature)°"
+                self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
                 self.labelForNextDayTypeWeather.text = self.weatherDaily[1].typeWeatherForDaily
-                self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].avarageTemperature)°"
+                self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
             default:
                 print("Error")
         }
@@ -90,8 +90,17 @@ class NowViewController: UIViewController {
                         for data in forecastday {
                             let dataAboutWeather = WeatherDaily()
                           
+                            if let date = data["date"] as? [String:AnyObject]{
+                                dataAboutWeather.day = date["day"] as! Int
+                                dataAboutWeather.month = date["month"] as! Int
+                                dataAboutWeather.nameMonth = date["monthname"] as! String
+                                dataAboutWeather.weekDay = date["weekday"] as! String
+                                
+                            }
+                            
                             if let high = data["high"] as? [String:AnyObject]{
                                 dataAboutWeather.highTemperature = high["celsius"] as! String
+                                
                             }
                             if let low  = data["low"] as? [String:AnyObject]{
                                 dataAboutWeather.lowTemperature = low["celsius"] as! String
@@ -127,6 +136,24 @@ class NowViewController: UIViewController {
         }
         return weatherDaily
     }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "moreDetail"{
+            let destinationController = segue.destinationViewController as! MoreDetailViewController
+            destinationController.date = "\(self.weatherDaily[0].day)/\(self.weatherDaily[0].month)"
+            destinationController.highTemperature = "\(self.weatherDaily[0].highTemperature)°"
+            destinationController.lowTemperature = "\(self.weatherDaily[0].lowTemperature)°"
+            destinationController.humidity = "\(self.weatherDaily[0].humidity)%"
+            destinationController.windSpeed = "\(self.weatherDaily[0].wind_speed)KM/H"
+            destinationController.weekDay = self.weatherDaily[0].weekDay
+            destinationController.nameMonth = self.weatherDaily[0].nameMonth
+            destinationController.typeWeather = self.weatherDaily[0].typeWeatherForDaily
+            destinationController.uvIndex = labelForUvIndex.text!
+        }
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
