@@ -29,8 +29,8 @@ class NowViewController: UIViewController {
     var weatherDaily = [WeatherDaily]()
     var uvIndex = 0.0
                                                                             //(lat),(lon)
-    let urlDaily = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/34,-118.json"
-    let urlUvIndex = "http://api.owm.io/air/1.0/uvi/current?lat=34&lon=-118&appid=fe96847f962cbea42c4d879c33daf010"
+    let urlDaily = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/48.51,30.48.json"
+    let urlUvIndex = "http://api.owm.io/air/1.0/uvi/current?lat=48.51&lon=30.488&appid=fe96847f962cbea42c4d879c33daf010"
     
     
     override func viewDidLoad() {

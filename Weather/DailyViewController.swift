@@ -12,7 +12,7 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     @IBOutlet weak var tableView: UITableView!
     
-    var url = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/34,-118.json"
+    var url = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/49.51,30.48.json"
     
     var weather = [WeatherDaily]()
     
@@ -69,6 +69,8 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                             if let date = data["date"] as? [String:AnyObject]{
                                 dataAboutWeather.day = date["day"] as! Int
                                 dataAboutWeather.month = date["month"] as! Int
+                                dataAboutWeather.nameMonth = date["monthname"] as! String
+                                dataAboutWeather.weekDay = date["weekday"] as! String
                             }
                             
                             if let high = data["high"] as? [String:AnyObject]{
@@ -93,6 +95,22 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             return weather
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DailyMoreDetail"{
+         if let indexPath = tableView.indexPathForSelectedRow{
+                let destinationController = segue.destinationViewController as! DailyMoreDetail
+                    destinationController.date = "\(weather[indexPath.row].day)/\(weather[indexPath.row].month)"
+                    destinationController.weekDay = weather[indexPath.row].weekDay
+                    destinationController.nameMonth = weather[indexPath.row].nameMonth
+                    destinationController.typeWeather = weather[indexPath.row].typeWeatherForDaily
+                    destinationController.tempHigh = "\(weather[indexPath.row].highTemperature)°"
+                    destinationController.tempLow = "\(weather[indexPath.row].lowTemperature)°"
+                    destinationController.humidity = "\(weather[indexPath.row].humidity)%"
+                    destinationController.windSpeed = "\(weather[indexPath.row].wind_speed)Km/H"
+                }
+            }
+    }
 
     
 }

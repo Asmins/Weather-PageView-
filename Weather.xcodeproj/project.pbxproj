@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */; };
 		8471E4F21D4005D100EF20F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471E4F01D4005D100EF20F7 /* Main.storyboard */; };
 		848AE8821D44BC6B00702608 /* CustomTableViewCellForDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */; };
 		848AE8841D44C18500702608 /* MoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8831D44C18500702608 /* MoreDetailViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyMoreDetail.swift; path = ../DailyMoreDetail.swift; sourceTree = "<group>"; };
 		8471E4F11D4005D100EF20F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellForDaily.swift; sourceTree = "<group>"; };
 		848AE8831D44C18500702608 /* MoreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				84E5F6031D3CDAAE00290B44 /* PageViewController.swift */,
 				84E5F6051D3CDB1400290B44 /* NowViewController.swift */,
 				84E5F6071D3CDB1D00290B44 /* HourlyViewController.swift */,
+				8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */,
 				84E5F6091D3CDB2600290B44 /* DailyViewController.swift */,
 				848AE8831D44C18500702608 /* MoreDetailViewController.swift */,
 			);
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E5913A1D3CF97E003F2E67 /* CustomTableViewCell.swift in Sources */,
+				8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */,
 				84E5F6061D3CDB1400290B44 /* NowViewController.swift in Sources */,
 				848AE8841D44C18500702608 /* MoreDetailViewController.swift in Sources */,
 				84DD728B1D3E3D5E0009B116 /* WeatherDaily.swift in Sources */,
