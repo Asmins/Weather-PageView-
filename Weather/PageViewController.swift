@@ -12,11 +12,11 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
     
     
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newColoredViewController("Now"),self.newColoredViewController("Hourly"),self.newColoredViewController("Daily")]
+        return [self.newViewController("Now"),self.newViewController("Hourly"),self.newViewController("Daily")]
     }()
     
     
-    func newColoredViewController(name: String) -> UIViewController {
+    func newViewController(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil) .
             instantiateViewControllerWithIdentifier("\(name)ViewController")
     }

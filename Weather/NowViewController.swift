@@ -37,26 +37,7 @@ class NowViewController: UIViewController {
         super.viewDidLoad()
         getDataAboutWeather(urlDaily)
         getDataAboutWeather(urlUvIndex)
-      /*
-        let alert = UIAlertController(title: "Hello", message: "Please wait 5 or 10 seconds for load data weather", preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default, handler: {action in
-            switch action.style{
-            case .Default:
-                self.labelForWindSpeed.text = "\(self.weatherDaily[0].wind_speed) KM/H"
-                self.labelForHumidity.text = "\(self.weatherDaily[0].humidity)%"
-                self.labelForTypeWeather.text = self.weatherDaily[0].typeWeatherForDaily
-                self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
-                self.labelForNextDayTypeWeather.text = self.weatherDaily[1].typeWeatherForDaily
-                self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
-            default:
-                print("Error")
-        }
-        }))
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-        
-    */
     }
     
 
@@ -67,6 +48,8 @@ class NowViewController: UIViewController {
         let urlSesion = NSURLSession.sharedSession()
         
         let task = urlSesion.dataTaskWithRequest(request, completionHandler: {(data,respone,error) -> Void in
+        
+            dispatch_async(dispatch_get_main_queue()) {
             if let error = error{
                 print(error)
                 return
@@ -75,6 +58,7 @@ class NowViewController: UIViewController {
                 
                 self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
                 
+                }
             }
         })
         
@@ -112,10 +96,16 @@ class NowViewController: UIViewController {
                             dataAboutWeather.typeWeatherForDaily = data["conditions"] as! String
                             dataAboutWeather.humidity = data["avehumidity"] as! Int
                             weatherDaily.append(dataAboutWeather)
-                            
-                         }
+                           }
+                        self.labelForWindSpeed.text = "\(self.weatherDaily[0].wind_speed) KM/H"
+                        self.labelForHumidity.text = "\(self.weatherDaily[0].humidity)%"
+                        self.labelForTypeWeather.text = self.weatherDaily[0].typeWeatherForDaily
+                        self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
+                        self.labelForNextDayTypeWeather.text = self.weatherDaily[1].typeWeatherForDaily
+                        self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
+                        
+                        }
                     }
-                }
             }else if let valueUvIndex = jsonResult!["value"] as? Double{
                 switch valueUvIndex {
                 case 0..<2.9 :
@@ -131,12 +121,13 @@ class NowViewController: UIViewController {
                 default:
                     print("Error")
                 }
-                
-                }
+            }else if (jsonResult!["code"] as? Int) != nil{
+                labelForUvIndex.text = "No access to the server"
+                labelForUvIndex.textColor = UIColor.redColor()
+            }
         }catch{
             print(error)
         }
-        
         return weatherDaily
     }
     
@@ -154,13 +145,14 @@ class NowViewController: UIViewController {
             destinationController.nameMonth = self.weatherDaily[0].nameMonth
             destinationController.typeWeather = self.weatherDaily[0].typeWeatherForDaily
             destinationController.uvIndex = labelForUvIndex.text!
+            
+            
         }
     }
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     
