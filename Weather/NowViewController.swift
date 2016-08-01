@@ -37,6 +37,7 @@ class NowViewController: UIViewController {
         super.viewDidLoad()
         getDataAboutWeather(urlDaily)
         getDataAboutWeather(urlUvIndex)
+      /*
         let alert = UIAlertController(title: "Hello", message: "Please wait 5 or 10 seconds for load data weather", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default, handler: {action in
@@ -55,7 +56,7 @@ class NowViewController: UIViewController {
         
         self.presentViewController(alert, animated: true, completion: nil)
         
-    
+    */
     }
     
 
@@ -111,7 +112,8 @@ class NowViewController: UIViewController {
                             dataAboutWeather.typeWeatherForDaily = data["conditions"] as! String
                             dataAboutWeather.humidity = data["avehumidity"] as! Int
                             weatherDaily.append(dataAboutWeather)
-                        }
+                            
+                         }
                     }
                 }
             }else if let valueUvIndex = jsonResult!["value"] as? Double{
@@ -134,6 +136,7 @@ class NowViewController: UIViewController {
         }catch{
             print(error)
         }
+        
         return weatherDaily
     }
     
