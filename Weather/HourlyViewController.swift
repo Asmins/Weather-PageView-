@@ -10,8 +10,7 @@ import UIKit
 
 class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    
-    let url = "http://api.wunderground.com/api/4ed7dad052717db4/hourly/q/49.26,32.3.json"
+    var manager = CityManager()
     
     var weather = [WeatherHourly]()
     
@@ -36,7 +35,7 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func getWeather(){
-        let reques = NSURLRequest(URL: NSURL(string: url)!)
+        let reques = NSURLRequest(URL: NSURL(string: "http://api.wunderground.com/api/4ed7dad052717db4/hourly/q/\(manager.getLat()),\(manager.getLong()).json")!)
         let urlSesion = NSURLSession.sharedSession()
         let task = urlSesion.dataTaskWithRequest(reques,completionHandler: {(data,response,error)->Void in
             if let error = error {

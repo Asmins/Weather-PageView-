@@ -10,11 +10,14 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var labelForNameCity: UILabel!
+    
     @IBOutlet weak var menuButton: UIButton!
+    var manager = CityManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBarHidden = true
-        //navigationItem.hidesBackButton = true
+        labelForNameCity.text = "\(manager.getName())"
         
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), forControlEvents: .TouchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())

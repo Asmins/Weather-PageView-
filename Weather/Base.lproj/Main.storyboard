@@ -18,7 +18,7 @@
         <!--Set City-->
         <scene sceneID="5lc-Hw-guI">
             <objects>
-                <viewController id="mw0-r2-zAW" customClass="ViewControllerForMap" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mw0-r2-zAW" customClass="ViewControllerForMaps" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fw3-8V-rNl"/>
                         <viewControllerLayoutGuide type="bottom" id="fF5-nq-5Kv"/>
@@ -29,7 +29,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-vg-IyO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,10 +44,10 @@
                                 <exclude reference="lMu-vg-IyO"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="v78-VL-aaS"/>
                                 <exclude reference="5nF-Pf-MxD"/>
                                 <exclude reference="Vf2-4D-fNV"/>
                                 <exclude reference="cY8-0B-QOr"/>
-                                <exclude reference="v78-VL-aaS"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -55,21 +55,28 @@
                                 <include reference="lMu-vg-IyO"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="v78-VL-aaS"/>
                                 <include reference="5nF-Pf-MxD"/>
                                 <include reference="Vf2-4D-fNV"/>
                                 <include reference="cY8-0B-QOr"/>
-                                <include reference="v78-VL-aaS"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Set City" id="0bD-V3-tl7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cUV-5j-txv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="cUV-5j-txv">
                             <connections>
                                 <segue destination="JcJ-a4-w8I" kind="show" id="5dr-n0-Tya"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9S7-mw-Vg5"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="9S7-mw-Vg5">
+                            <connections>
+                                <action selector="searchButton:" destination="mw0-r2-zAW" id="dcO-gA-A3A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="viewForGoogleMaps" destination="lMu-vg-IyO" id="a5f-EO-wj8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vy-32-gkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +97,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JL-08-PgS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1245" translatesAutoresizingMaskIntoConstraints="NO" id="fCl-ew-vSM">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rainbow14" translatesAutoresizingMaskIntoConstraints="NO" id="fCl-ew-vSM">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="580"/>
@@ -2044,6 +2051,7 @@
                     <navigationItem key="navigationItem" id="uOe-TQ-JGB"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="labelForNameCity" destination="Njp-WE-gdr" id="WdJ-Ga-UvI"/>
                         <outlet property="menuButton" destination="1gK-te-Iz4" id="TlO-a4-Zj6"/>
                     </connections>
                 </viewController>
@@ -2071,15 +2079,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1245" width="1200" height="1200"/>
         <image name="Circled Right 2-58" width="58" height="58"/>
         <image name="Map Marker Filled-50" width="50" height="50"/>
         <image name="Menu-for-change-city" width="30" height="30"/>
         <image name="Menu-for-setting" width="30" height="30"/>
+        <image name="Rainbow14" width="1667" height="1667"/>
         <image name="storm" width="128" height="128"/>
         <image name="sun" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5dr-n0-Tya"/>
+        <segue reference="IIk-DL-42J"/>
     </inferredMetricsTieBreakers>
 </document>

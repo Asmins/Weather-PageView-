@@ -25,18 +25,15 @@ class NowViewController: UIViewController {
     @IBOutlet weak var imageForTypeWeather: UIImageView!
     
     @IBOutlet weak var activitityInd: UIActivityIndicatorView!
-    
+    var manager = CityManager()
     var weatherDaily = [WeatherDaily]()
     var uvIndex = 0.0
-                                                                            //(lat),(lon)
-    let urlDaily = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/49.26,32.3.json"
-    let urlUvIndex = "http://api.owm.io/air/1.0/uvi/current?lat=49.26&lon=32.3&appid=fe96847f962cbea42c4d879c33daf010"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDataAboutWeather(urlDaily)
-        getDataAboutWeather(urlUvIndex)
+        
+        getDataAboutWeather("http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
+        getDataAboutWeather("http://api.owm.io/air/1.0/uvi/current?lat=\(manager.getLat())&lon=\(manager.getLong())&appid=fe96847f962cbea42c4d879c33daf010")
         
     }
     
