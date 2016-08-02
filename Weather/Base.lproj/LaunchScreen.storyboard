@@ -16,12 +16,78 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="O7GZ580" translatesAutoresizingMaskIntoConstraints="NO" id="hn5-rk-Bep">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbk-5s-MuN">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="5su-yA-HIX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5su-yA-HIX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5su-yA-HIX"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="nbk-5s-MuN" secondAttribute="bottom" constant="333" id="7bP-rY-uyo"/>
+                            <constraint firstItem="nbk-5s-MuN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="128" id="GHl-cU-R25"/>
+                            <constraint firstAttribute="trailing" secondItem="hn5-rk-Bep" secondAttribute="trailing" id="Hjm-25-h21"/>
+                            <constraint firstItem="hn5-rk-Bep" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Oeg-Y5-MsJ"/>
+                            <constraint firstItem="hn5-rk-Bep" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="PyN-qs-8DN"/>
+                            <constraint firstItem="nbk-5s-MuN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="226" id="ga0-HX-Apb"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="hn5-rk-Bep" secondAttribute="bottom" id="t8g-nl-YtZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hn5-rk-Bep"/>
+                                <exclude reference="nbk-5s-MuN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7bP-rY-uyo"/>
+                                <exclude reference="t8g-nl-YtZ"/>
+                                <exclude reference="GHl-cU-R25"/>
+                                <exclude reference="ga0-HX-Apb"/>
+                                <exclude reference="Hjm-25-h21"/>
+                                <exclude reference="Oeg-Y5-MsJ"/>
+                                <exclude reference="PyN-qs-8DN"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hn5-rk-Bep"/>
+                                <include reference="nbk-5s-MuN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7bP-rY-uyo"/>
+                                <include reference="t8g-nl-YtZ"/>
+                                <include reference="GHl-cU-R25"/>
+                                <include reference="ga0-HX-Apb"/>
+                                <include reference="Hjm-25-h21"/>
+                                <include reference="Oeg-Y5-MsJ"/>
+                                <include reference="PyN-qs-8DN"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="216" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="O7GZ580" width="5000" height="3328"/>
+    </resources>
 </document>

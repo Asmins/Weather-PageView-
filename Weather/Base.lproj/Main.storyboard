@@ -13,7 +13,67 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifq-Hl-1O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-279" y="442"/>
+            <point key="canvasLocation" x="603" y="230"/>
+        </scene>
+        <!--Set City-->
+        <scene sceneID="5lc-Hw-guI">
+            <objects>
+                <viewController id="mw0-r2-zAW" customClass="ViewControllerForMap" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fw3-8V-rNl"/>
+                        <viewControllerLayoutGuide type="bottom" id="fF5-nq-5Kv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d6h-rI-zKx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-vg-IyO">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lMu-vg-IyO" firstAttribute="top" secondItem="fw3-8V-rNl" secondAttribute="bottom" id="5nF-Pf-MxD"/>
+                            <constraint firstAttribute="trailing" secondItem="lMu-vg-IyO" secondAttribute="trailing" id="Vf2-4D-fNV"/>
+                            <constraint firstItem="lMu-vg-IyO" firstAttribute="leading" secondItem="d6h-rI-zKx" secondAttribute="leading" id="cY8-0B-QOr"/>
+                            <constraint firstItem="fF5-nq-5Kv" firstAttribute="top" secondItem="lMu-vg-IyO" secondAttribute="bottom" id="v78-VL-aaS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lMu-vg-IyO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5nF-Pf-MxD"/>
+                                <exclude reference="Vf2-4D-fNV"/>
+                                <exclude reference="cY8-0B-QOr"/>
+                                <exclude reference="v78-VL-aaS"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="lMu-vg-IyO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5nF-Pf-MxD"/>
+                                <include reference="Vf2-4D-fNV"/>
+                                <include reference="cY8-0B-QOr"/>
+                                <include reference="v78-VL-aaS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Set City" id="0bD-V3-tl7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cUV-5j-txv">
+                            <connections>
+                                <segue destination="JcJ-a4-w8I" kind="show" id="5dr-n0-Tya"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9S7-mw-Vg5"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7vy-32-gkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2256" y="208"/>
         </scene>
         <!--Now View Controller-->
         <scene sceneID="bdR-iV-l9Q">
@@ -1594,6 +1654,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gYK-0v-L5I"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oGB-te-L6c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1604,19 +1665,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7Z-aL-9bs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2460" y="354"/>
+            <point key="canvasLocation" x="-1116" y="294"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="ueG-nO-tim">
             <objects>
                 <tableViewController id="JjS-fz-mEJ" customClass="TableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Lz-gL-MYz" customClass="Table">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bcd-hX-hvx" customClass="CustomTableViewCellForSlideMenu" customModule="Weather" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Set City" id="bcd-hX-hvx" customClass="CustomTableViewCellForSlideMenu" customModule="Weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bcd-hX-hvx" id="Com-vc-NnR">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-XY-Jj9">
@@ -1658,11 +1722,11 @@
                                             <exclude reference="t86-pg-F8U"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="GMi-aM-gNb"/>
-                                            <exclude reference="ucY-LT-bQe"/>
                                             <exclude reference="bmc-HL-rgS"/>
                                             <exclude reference="pWn-dv-Ydx"/>
                                             <exclude reference="rSi-TN-h8q"/>
+                                            <exclude reference="GMi-aM-gNb"/>
+                                            <exclude reference="ucY-LT-bQe"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -1671,17 +1735,18 @@
                                             <include reference="t86-pg-F8U"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="GMi-aM-gNb"/>
-                                            <include reference="ucY-LT-bQe"/>
                                             <include reference="bmc-HL-rgS"/>
                                             <include reference="pWn-dv-Ydx"/>
                                             <include reference="rSi-TN-h8q"/>
+                                            <include reference="GMi-aM-gNb"/>
+                                            <include reference="ucY-LT-bQe"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageViewForSlideItems" destination="t86-pg-F8U" id="Xh2-AC-tSG"/>
                                     <outlet property="labelForSlideItems" destination="IkS-XY-Jj9" id="Veh-d0-Xvh"/>
+                                    <segue destination="YDn-x8-D0m" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="TKc-SJ-68g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1693,7 +1758,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0S-pl-Kr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1596" y="354"/>
+            <point key="canvasLocation" x="-252" y="294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5H3-TW-LHG">
@@ -1711,12 +1776,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BII-vy-qdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1596" y="-350"/>
+            <point key="canvasLocation" x="-252" y="-410"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="fQ0-HX-5Mw">
             <objects>
-                <viewController id="JcJ-a4-w8I" customClass="FirstViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstView" id="JcJ-a4-w8I" customClass="FirstViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wjo-b7-2Sk"/>
                         <viewControllerLayoutGuide type="bottom" id="pme-85-6MI"/>
@@ -1887,18 +1952,18 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="f0l-7B-rJN"/>
-                                        <exclude reference="4w2-KQ-Sts"/>
-                                        <exclude reference="at2-7K-9NU"/>
-                                        <exclude reference="KPS-bj-sD1"/>
-                                        <exclude reference="SDr-Fl-d7a"/>
-                                        <exclude reference="T32-5m-gKx"/>
-                                        <exclude reference="hYP-xx-rxS"/>
-                                        <exclude reference="ZhQ-Xw-bLo"/>
-                                        <exclude reference="pr9-zU-tN9"/>
                                         <exclude reference="5Ew-f7-WLL"/>
                                         <exclude reference="uBh-fd-vnx"/>
+                                        <exclude reference="4w2-KQ-Sts"/>
+                                        <exclude reference="at2-7K-9NU"/>
+                                        <exclude reference="ZhQ-Xw-bLo"/>
+                                        <exclude reference="pr9-zU-tN9"/>
+                                        <exclude reference="KPS-bj-sD1"/>
+                                        <exclude reference="SDr-Fl-d7a"/>
                                         <exclude reference="PdA-j6-HHF"/>
                                         <exclude reference="SZH-ja-WFO"/>
+                                        <exclude reference="T32-5m-gKx"/>
+                                        <exclude reference="hYP-xx-rxS"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1912,18 +1977,18 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="f0l-7B-rJN"/>
-                                        <include reference="4w2-KQ-Sts"/>
-                                        <include reference="at2-7K-9NU"/>
-                                        <include reference="KPS-bj-sD1"/>
-                                        <include reference="SDr-Fl-d7a"/>
-                                        <include reference="T32-5m-gKx"/>
-                                        <include reference="hYP-xx-rxS"/>
-                                        <include reference="ZhQ-Xw-bLo"/>
-                                        <include reference="pr9-zU-tN9"/>
                                         <include reference="5Ew-f7-WLL"/>
                                         <include reference="uBh-fd-vnx"/>
+                                        <include reference="4w2-KQ-Sts"/>
+                                        <include reference="at2-7K-9NU"/>
+                                        <include reference="ZhQ-Xw-bLo"/>
+                                        <include reference="pr9-zU-tN9"/>
+                                        <include reference="KPS-bj-sD1"/>
+                                        <include reference="SDr-Fl-d7a"/>
                                         <include reference="PdA-j6-HHF"/>
                                         <include reference="SZH-ja-WFO"/>
+                                        <include reference="T32-5m-gKx"/>
+                                        <include reference="hYP-xx-rxS"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1984,7 +2049,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yH5-gk-tsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-741" y="-350"/>
+            <point key="canvasLocation" x="603" y="-410"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zHb-DZ-YYC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YDn-x8-D0m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TMd-fV-3fz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mw0-r2-zAW" kind="relationship" relationship="rootViewController" id="TEU-tT-Sp8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTa-dX-6z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="208"/>
         </scene>
     </scenes>
     <resources>
@@ -1996,4 +2079,7 @@
         <image name="storm" width="128" height="128"/>
         <image name="sun" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5dr-n0-Tya"/>
+    </inferredMetricsTieBreakers>
 </document>

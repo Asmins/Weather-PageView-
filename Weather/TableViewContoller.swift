@@ -24,7 +24,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCellForSlideMenu
+        let cell = tableView.dequeueReusableCellWithIdentifier(array[indexPath.row], forIndexPath: indexPath) as! CustomTableViewCellForSlideMenu
         cell.labelForSlideItems.text = array[indexPath.row]
         cell.imageViewForSlideItems.image = UIImage(named:"Map Marker Filled-50")
         return  cell

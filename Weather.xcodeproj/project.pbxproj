@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842ADF921D50B3BC0057361E /* ViewControllerForMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF911D50B3BC0057361E /* ViewControllerForMap.swift */; };
 		8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */; };
 		8471E4F21D4005D100EF20F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471E4F01D4005D100EF20F7 /* Main.storyboard */; };
 		848AE8821D44BC6B00702608 /* CustomTableViewCellForDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		842ADF911D50B3BC0057361E /* ViewControllerForMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerForMap.swift; sourceTree = "<group>"; };
 		8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyMoreDetail.swift; path = ../DailyMoreDetail.swift; sourceTree = "<group>"; };
 		8471E4F11D4005D100EF20F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellForDaily.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */,
 				84E5F6091D3CDB2600290B44 /* DailyViewController.swift */,
 				848AE8831D44C18500702608 /* MoreDetailViewController.swift */,
+				842ADF911D50B3BC0057361E /* ViewControllerForMap.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				84DD728B1D3E3D5E0009B116 /* WeatherDaily.swift in Sources */,
 				84E5F5F21D3CDA8100290B44 /* AppDelegate.swift in Sources */,
 				84DD72911D3E5D210009B116 /* WeatherHourly.swift in Sources */,
+				842ADF921D50B3BC0057361E /* ViewControllerForMap.swift in Sources */,
 				848AE8821D44BC6B00702608 /* CustomTableViewCellForDaily.swift in Sources */,
 				84E5F6041D3CDAAE00290B44 /* PageViewController.swift in Sources */,
 				84E5F6081D3CDB1D00290B44 /* HourlyViewController.swift in Sources */,

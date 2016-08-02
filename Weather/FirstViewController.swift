@@ -13,8 +13,12 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), forControlEvents: .TouchUpInside)
+        navigationController?.navigationBarHidden = true
+        //navigationItem.hidesBackButton = true
+        
+        menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), forControlEvents: .TouchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.revealViewController().rearViewRevealWidth = 150
  }
     
 
