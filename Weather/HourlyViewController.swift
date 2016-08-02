@@ -11,7 +11,7 @@ import UIKit
 class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
-    let url = "http://api.wunderground.com/api/4ed7dad052717db4/hourly/q/49.51,30.48.json"
+    let url = "http://api.wunderground.com/api/4ed7dad052717db4/hourly/q/49.26,32.3.json"
     
     var weather = [WeatherHourly]()
     

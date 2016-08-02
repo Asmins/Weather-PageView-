@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rE7-2e-igL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eb0-Cx-lvB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1585,6 +1585,116 @@
             </objects>
             <point key="canvasLocation" x="366" y="1077"/>
         </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="e08-v6-Pfv">
+            <objects>
+                <viewController id="Eb0-Cx-lvB" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BF1-TV-iDr"/>
+                        <viewControllerLayoutGuide type="bottom" id="gYK-0v-L5I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oGB-te-L6c">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="JjS-fz-mEJ" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="hBB-yg-QMR"/>
+                        <segue destination="rE7-2e-igL" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="e7b-5C-ag4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7Z-aL-9bs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2460" y="354"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ueG-nO-tim">
+            <objects>
+                <tableViewController id="JjS-fz-mEJ" customClass="TableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Lz-gL-MYz" customClass="Table">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bcd-hX-hvx" customClass="CustomTableViewCellForSlideMenu" customModule="Weather" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bcd-hX-hvx" id="Com-vc-NnR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-XY-Jj9">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map Marker Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="t86-pg-F8U">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="eYi-Ec-sFg"/>
+                                                <constraint firstAttribute="height" constant="35" id="ezs-JN-KL7"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="eYi-Ec-sFg"/>
+                                                    <exclude reference="ezs-JN-KL7"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="eYi-Ec-sFg"/>
+                                                    <include reference="ezs-JN-KL7"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="t86-pg-F8U" firstAttribute="leading" secondItem="Com-vc-NnR" secondAttribute="leading" constant="10" id="GMi-aM-gNb"/>
+                                        <constraint firstAttribute="bottom" secondItem="IkS-XY-Jj9" secondAttribute="bottom" constant="11" id="bmc-HL-rgS"/>
+                                        <constraint firstItem="IkS-XY-Jj9" firstAttribute="top" secondItem="Com-vc-NnR" secondAttribute="top" constant="11" id="pWn-dv-Ydx"/>
+                                        <constraint firstItem="IkS-XY-Jj9" firstAttribute="leading" secondItem="Com-vc-NnR" secondAttribute="leading" constant="60" id="rSi-TN-h8q"/>
+                                        <constraint firstItem="t86-pg-F8U" firstAttribute="top" secondItem="Com-vc-NnR" secondAttribute="top" id="ucY-LT-bQe"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="IkS-XY-Jj9"/>
+                                            <exclude reference="t86-pg-F8U"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="GMi-aM-gNb"/>
+                                            <exclude reference="ucY-LT-bQe"/>
+                                            <exclude reference="bmc-HL-rgS"/>
+                                            <exclude reference="pWn-dv-Ydx"/>
+                                            <exclude reference="rSi-TN-h8q"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="IkS-XY-Jj9"/>
+                                            <include reference="t86-pg-F8U"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="GMi-aM-gNb"/>
+                                            <include reference="ucY-LT-bQe"/>
+                                            <include reference="bmc-HL-rgS"/>
+                                            <include reference="pWn-dv-Ydx"/>
+                                            <include reference="rSi-TN-h8q"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageViewForSlideItems" destination="t86-pg-F8U" id="Xh2-AC-tSG"/>
+                                    <outlet property="labelForSlideItems" destination="IkS-XY-Jj9" id="Veh-d0-Xvh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JjS-fz-mEJ" id="QBp-cc-KRc"/>
+                            <outlet property="delegate" destination="JjS-fz-mEJ" id="bLQ-ZH-xve"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0S-pl-Kr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1596" y="354"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5H3-TW-LHG">
             <objects>
@@ -1601,7 +1711,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BII-vy-qdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-627" y="-222"/>
+            <point key="canvasLocation" x="-1596" y="-350"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="fQ0-HX-5Mw">
@@ -1638,7 +1748,7 @@
                                             </mask>
                                         </variation>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kagarlyk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-WE-gdr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cherkassy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-WE-gdr">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ZFF-Z0-6HB"/>
@@ -1777,18 +1887,18 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="f0l-7B-rJN"/>
-                                        <exclude reference="5Ew-f7-WLL"/>
-                                        <exclude reference="uBh-fd-vnx"/>
                                         <exclude reference="4w2-KQ-Sts"/>
                                         <exclude reference="at2-7K-9NU"/>
-                                        <exclude reference="ZhQ-Xw-bLo"/>
-                                        <exclude reference="pr9-zU-tN9"/>
                                         <exclude reference="KPS-bj-sD1"/>
                                         <exclude reference="SDr-Fl-d7a"/>
-                                        <exclude reference="PdA-j6-HHF"/>
-                                        <exclude reference="SZH-ja-WFO"/>
                                         <exclude reference="T32-5m-gKx"/>
                                         <exclude reference="hYP-xx-rxS"/>
+                                        <exclude reference="ZhQ-Xw-bLo"/>
+                                        <exclude reference="pr9-zU-tN9"/>
+                                        <exclude reference="5Ew-f7-WLL"/>
+                                        <exclude reference="uBh-fd-vnx"/>
+                                        <exclude reference="PdA-j6-HHF"/>
+                                        <exclude reference="SZH-ja-WFO"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1802,18 +1912,18 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="f0l-7B-rJN"/>
-                                        <include reference="5Ew-f7-WLL"/>
-                                        <include reference="uBh-fd-vnx"/>
                                         <include reference="4w2-KQ-Sts"/>
                                         <include reference="at2-7K-9NU"/>
-                                        <include reference="ZhQ-Xw-bLo"/>
-                                        <include reference="pr9-zU-tN9"/>
                                         <include reference="KPS-bj-sD1"/>
                                         <include reference="SDr-Fl-d7a"/>
-                                        <include reference="PdA-j6-HHF"/>
-                                        <include reference="SZH-ja-WFO"/>
                                         <include reference="T32-5m-gKx"/>
                                         <include reference="hYP-xx-rxS"/>
+                                        <include reference="ZhQ-Xw-bLo"/>
+                                        <include reference="pr9-zU-tN9"/>
+                                        <include reference="5Ew-f7-WLL"/>
+                                        <include reference="uBh-fd-vnx"/>
+                                        <include reference="PdA-j6-HHF"/>
+                                        <include reference="SZH-ja-WFO"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1865,16 +1975,22 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="uOe-TQ-JGB"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="menuButton" destination="1gK-te-Iz4" id="TlO-a4-Zj6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yH5-gk-tsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="-222"/>
+            <point key="canvasLocation" x="-741" y="-350"/>
         </scene>
     </scenes>
     <resources>
         <image name="1245" width="1200" height="1200"/>
         <image name="Circled Right 2-58" width="58" height="58"/>
+        <image name="Map Marker Filled-50" width="50" height="50"/>
         <image name="Menu-for-change-city" width="30" height="30"/>
         <image name="Menu-for-setting" width="30" height="30"/>
         <image name="storm" width="128" height="128"/>

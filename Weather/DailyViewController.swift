@@ -12,7 +12,7 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     @IBOutlet weak var tableView: UITableView!
     
-    var url = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/49.51,30.48.json"
+    var url = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/49.26,32.3.json"
     
     var weather = [WeatherDaily]()
     
