@@ -16,12 +16,12 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     var weather = [WeatherDaily]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+   
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        weather = []
         getWeather()
-        // Do any additional setup after loading the view.
     }
-
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weather.count
@@ -37,6 +37,8 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func getWeather(){
+        print(manager.getLat())
+        print(manager.getLong())
         let reques = NSURLRequest(URL: NSURL(string: "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")!)
         let urlSesion = NSURLSession.sharedSession()
         let task = urlSesion.dataTaskWithRequest(reques,completionHandler: {(data,response,error)->Void in

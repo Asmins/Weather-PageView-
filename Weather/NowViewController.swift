@@ -29,16 +29,6 @@ class NowViewController: UIViewController {
     var weatherDaily = [WeatherDaily]()
     var uvIndex = 0.0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        getDataAboutWeather("http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
-        getDataAboutWeather("http://api.owm.io/air/1.0/uvi/current?lat=\(manager.getLat())&lon=\(manager.getLong())&appid=fe96847f962cbea42c4d879c33daf010")
-        
-    }
-    
-
-    
     func getDataAboutWeather(url:String){
         
         let request = NSURLRequest(URL: NSURL(string: url)!)
@@ -150,7 +140,13 @@ class NowViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        getDataAboutWeather("http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
+        getDataAboutWeather("http://api.owm.io/air/1.0/uvi/current?lat=\(manager.getLat())&lon=\(manager.getLong())&appid=fe96847f962cbea42c4d879c33daf010")
+        
+        
     }
+    
     
     
     @IBAction func moreDetail(sender: AnyObject) {

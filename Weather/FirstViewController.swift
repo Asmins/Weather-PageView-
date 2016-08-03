@@ -7,33 +7,69 @@
 //
 
 import UIKit
+import CoreLocation
 
-class FirstViewController: UIViewController {
-
-    @IBOutlet weak var labelForNameCity: UILabel!
+class FirstViewController: UIViewController,CLLocationManagerDelegate {
     
+    @IBOutlet weak var labelForNameCity: UILabel!
     @IBOutlet weak var menuButton: UIButton!
+    
     var manager = CityManager()
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var locationManager:CLLocationManager!
+    
+    var location: CLLocation!{
+        didSet{
+            manager.saveLat(location.coordinate.latitude)
+            manager.saveLong(location.coordinate.longitude)
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+            print("This coordinates from gps")
+        }
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        
         navigationController?.navigationBarHidden = true
         labelForNameCity.text = "\(manager.getName())"
         
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), forControlEvents: .TouchUpInside)
+        
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.revealViewController().rearViewRevealWidth = 150
- }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.revealViewController().rearViewRevealWidth = 200
+        
     }
     
+    
+    func checkCoreLocation(){
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse{
+            locationManager.startUpdatingHeading()
+        }else if CLLocationManager.authorizationStatus() == .NotDetermined{
+            locationManager.requestWhenInUseAuthorization()
+        }else if CLLocationManager.authorizationStatus() == .Restricted{
+            print("Use location service")
+        }
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.first
+        locationManager.stopUpdatingLocation()
+    }
+    
+    
+   
     @IBAction func showSetting(sender: AnyObject) {
         let settingMenu = UIAlertController(title: nil, message: "Setting", preferredStyle: .ActionSheet)
         
-        let findMeToGPS = UIAlertAction(title: "Find Me (GPS)", style: UIAlertActionStyle.Default , handler: nil)
+        let findMeToGPS = UIAlertAction(title: "Find Me (GPS)", style: UIAlertActionStyle.Default , handler: {(action)-> Void in
+           self.locationManager.startUpdatingLocation()
+        })
         
         let changeTo = UIAlertAction(title: "Change to F°", style: UIAlertActionStyle.Default, handler: nil)
         
@@ -47,15 +83,16 @@ class FirstViewController: UIViewController {
         self.presentViewController(settingMenu, animated: true, completion: nil)
         
     }
+    
     @IBAction func showNowView(sender: AnyObject) {
-        print("nOw")
+        
     }
     
     @IBAction func showHourlyView(sender: AnyObject) {
-        print("Hourly")
+        
     }
     @IBAction func showDailyView(sender: AnyObject) {
-        print("Daily")
+        
     }
     override func prefersStatusBarHidden() -> Bool {
         return true

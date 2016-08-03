@@ -14,6 +14,7 @@
 		842ADF991D50BFE40057361E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF981D50BFE40057361E /* SearchResultController.swift */; };
 		8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */; };
 		8471E4F21D4005D100EF20F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471E4F01D4005D100EF20F7 /* Main.storyboard */; };
+		847B4F001D51E29800A3CD52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */; };
 		848AE8821D44BC6B00702608 /* CustomTableViewCellForDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */; };
 		848AE8841D44C18500702608 /* MoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8831D44C18500702608 /* MoreDetailViewController.swift */; };
 		84DD728B1D3E3D5E0009B116 /* WeatherDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD728A1D3E3D5E0009B116 /* WeatherDaily.swift */; };
@@ -41,6 +42,7 @@
 		842ADF981D50BFE40057361E /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyMoreDetail.swift; path = ../DailyMoreDetail.swift; sourceTree = "<group>"; };
 		8471E4F11D4005D100EF20F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellForDaily.swift; sourceTree = "<group>"; };
 		848AE8831D44C18500702608 /* MoreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDetailViewController.swift; sourceTree = "<group>"; };
 		84DD728A1D3E3D5E0009B116 /* WeatherDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDaily.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847B4F001D51E29800A3CD52 /* CoreLocation.framework in Frameworks */,
 				0CBE9F8864F7CB3C5D38F74D /* Pods_Weather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +200,7 @@
 		A8C89DA86A85279E6951C2D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */,
 				0F4EA46F28F6C025ABF1ED58 /* Pods_Weather.framework */,
 			);
 			name = Frameworks;

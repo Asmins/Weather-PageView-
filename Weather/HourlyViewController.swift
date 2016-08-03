@@ -14,17 +14,15 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     var weather = [WeatherHourly]()
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        weather = []
         getWeather()
     }
-
-        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weather.count
     }
-
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomTableViewCell
@@ -73,13 +71,13 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
                     dataAboutWeather.typeWeather = data["condition"] as! String
                     
                     weather.append(dataAboutWeather)
-                 }
+                }
             }
         }catch{
             print(error)
         }
         return weather
-    
+        
     }
-
+    
 }

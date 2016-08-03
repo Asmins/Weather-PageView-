@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vy-32-gkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2256" y="208"/>
+            <point key="canvasLocation" x="2370" y="-94"/>
         </scene>
         <!--Now View Controller-->
         <scene sceneID="bdR-iV-l9Q">
@@ -489,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gch-Xg-9dW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="1077"/>
+            <point key="canvasLocation" x="-252" y="979"/>
         </scene>
         <!--More Detail View Controller-->
         <scene sceneID="acn-uU-dwv">
@@ -843,7 +843,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XU9-yn-oVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="1817"/>
+            <point key="canvasLocation" x="-252" y="1683"/>
         </scene>
         <!--Daily More Detail-->
         <scene sceneID="gHZ-LF-jbq">
@@ -1154,7 +1154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kB2-t2-Avy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="1817"/>
+            <point key="canvasLocation" x="1036" y="1691"/>
         </scene>
         <!--Hourly View Controller-->
         <scene sceneID="a3V-N8-7fp">
@@ -1390,7 +1390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlh-It-8tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292.5" y="1077"/>
+            <point key="canvasLocation" x="396" y="979"/>
         </scene>
         <!--Daily View Controller-->
         <scene sceneID="hSH-Lw-MVm">
@@ -1650,7 +1650,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ub-d2-uMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="1077"/>
+            <point key="canvasLocation" x="1035" y="979"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="e08-v6-Pfv">
@@ -1672,7 +1672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7Z-aL-9bs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1116" y="294"/>
+            <point key="canvasLocation" x="-1168" y="-94"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="ueG-nO-tim">
@@ -1693,7 +1693,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-XY-Jj9">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map Marker Filled-50" translatesAutoresizingMaskIntoConstraints="NO" id="t86-pg-F8U">
@@ -2075,7 +2075,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTa-dX-6z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1491" y="208"/>
+            <point key="canvasLocation" x="1399" y="294"/>
         </scene>
     </scenes>
     <resources>
