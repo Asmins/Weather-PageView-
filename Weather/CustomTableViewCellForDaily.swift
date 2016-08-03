@@ -14,6 +14,9 @@ class CustomTableViewCellForDaily: UITableViewCell {
     @IBOutlet weak var imageViewForTypeWeather: UIImageView!
     @IBOutlet weak var labelForTypeWeather: UILabel!
     @IBOutlet weak var labelForHighLowTemperature: UILabel!
+    
+    
+    var url = " "
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

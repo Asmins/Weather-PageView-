@@ -13,7 +13,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifq-Hl-1O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="603" y="230"/>
+            <point key="canvasLocation" x="591" y="222"/>
         </scene>
         <!--Set City-->
         <scene sceneID="5lc-Hw-guI">
@@ -29,7 +29,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-vg-IyO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +97,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JL-08-PgS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rainbow14" translatesAutoresizingMaskIntoConstraints="NO" id="fCl-ew-vSM">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="preview" translatesAutoresizingMaskIntoConstraints="NO" id="fCl-ew-vSM">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="580"/>
@@ -485,6 +485,7 @@
                         <outlet property="labelForTypeWeather" destination="vto-co-crd" id="Kwh-nb-3Zh"/>
                         <outlet property="labelForUvIndex" destination="Gws-ts-iUv" id="WHz-6w-zcK"/>
                         <outlet property="labelForWindSpeed" destination="zSr-hK-uHd" id="Id7-Fg-QCj"/>
+                        <outlet property="mainImageView" destination="fCl-ew-vSM" id="pRA-RK-EGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gch-Xg-9dW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1650,7 +1651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ub-d2-uMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="979"/>
+            <point key="canvasLocation" x="1485" y="993"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="e08-v6-Pfv">
@@ -2083,7 +2084,7 @@
         <image name="Map Marker Filled-50" width="50" height="50"/>
         <image name="Menu-for-change-city" width="30" height="30"/>
         <image name="Menu-for-setting" width="30" height="30"/>
-        <image name="Rainbow14" width="1667" height="1667"/>
+        <image name="preview" width="1298" height="1298"/>
         <image name="storm" width="128" height="128"/>
         <image name="sun" width="64" height="64"/>
     </resources>

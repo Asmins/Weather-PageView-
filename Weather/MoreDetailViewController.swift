@@ -44,7 +44,7 @@ class MoreDetailViewController: UIViewController {
         labelForWeekDay.text = weekDay
         labelForWindSpeed.text = windSpeed
         labelForHumidity.text = humidity
-        if labelForUvIndex.text == "No access to the server"{
+        if labelForUvIndex.text == "N/A"{
             labelForUvIndex.textColor = UIColor.redColor()
         }
     }

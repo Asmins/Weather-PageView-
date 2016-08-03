@@ -15,6 +15,7 @@ class NowViewController: UIViewController {
     @IBOutlet weak var labelForNextDayTypeWeather: UILabel!
     
     
+    @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var labelForNextDayForTemperature: UILabel!
     @IBOutlet weak var labelForHumidity: UILabel!
     
@@ -90,7 +91,7 @@ class NowViewController: UIViewController {
                         self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
                         self.labelForNextDayTypeWeather.text = self.weatherDaily[1].typeWeatherForDaily
                         self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
-                        
+                        setImageView()
                         }
                     }
             }else if let valueUvIndex = jsonResult!["value"] as? Double{
@@ -109,7 +110,7 @@ class NowViewController: UIViewController {
                     print("Error")
                 }
             }else if (jsonResult!["code"] as? Int) != nil{
-                labelForUvIndex.text = "No access to the server"
+                labelForUvIndex.text = "N/A"
                 labelForUvIndex.textColor = UIColor.redColor()
             }
         }catch{
@@ -118,7 +119,29 @@ class NowViewController: UIViewController {
         return weatherDaily
     }
     
-    
+    func setImageView(){
+        if weatherDaily[0].typeWeatherForDaily == "Overcast"{
+            mainImageView.image = UIImage(named: "overCast")
+            imageForTypeWeather.image = UIImage(named: "CloudIcon")
+        }else if weatherDaily[0].typeWeatherForDaily == "Clear"{
+            mainImageView.image = UIImage(named: "clear")
+            imageForTypeWeather.image = UIImage(named: "sun")
+        }else if weatherDaily[0].typeWeatherForDaily == "Chance of Rain"{
+            mainImageView.image = UIImage(named: "rain")
+            imageForTypeWeather.image = UIImage(named: "RainIcon")
+        }else if weatherDaily[0].typeWeatherForDaily == "Partly Cloudy"{
+            mainImageView.image = UIImage(named: "cloudy")
+            imageForTypeWeather.image = UIImage(named: "CloudIcon")
+        }else if weatherDaily[0].typeWeatherForDaily == "Chance of a Thunderstorm"{
+            mainImageView.image = UIImage(named: "storm-1")
+            imageForTypeWeather.image = UIImage(named: "storm")
+        }else if weatherDaily[0].typeWeatherForDaily == "Thunderstorm"{
+            mainImageView.image = UIImage(named: "storm-1")
+            imageForTypeWeather.image = UIImage(named: "storm")
+        }
+        
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "moreDetail"{
@@ -140,9 +163,10 @@ class NowViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        weatherDaily = []
         getDataAboutWeather("http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
         getDataAboutWeather("http://api.owm.io/air/1.0/uvi/current?lat=\(manager.getLat())&lon=\(manager.getLong())&appid=fe96847f962cbea42c4d879c33daf010")
+        
         
         
     }

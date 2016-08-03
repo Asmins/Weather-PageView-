@@ -34,13 +34,6 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
         
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
@@ -49,8 +42,7 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
         
         let previousIndex = viewControllerIndex - 1
         
-        // User is on the first view controller and swiped left to loop to
-        // the last view controller.
+       
         guard previousIndex >= 0 else {
             return orderedViewControllers.last
         }
@@ -70,8 +62,7 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
         
-        // User is on the last view controller and swiped right to loop to
-        // the first view controller.
+        
         guard orderedViewControllersCount != nextIndex else {
             return orderedViewControllers.first
         }

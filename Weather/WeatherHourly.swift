@@ -14,4 +14,5 @@ class WeatherHourly{
     var hour = " "
     var typeWeather = " "
     var temperature = " "
+    var url = " " 
 }

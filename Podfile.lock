@@ -1,10 +1,15 @@
 PODS:
   - GoogleMaps (1.13.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - GoogleMaps
+  - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
 COCOAPODS: 0.39.0

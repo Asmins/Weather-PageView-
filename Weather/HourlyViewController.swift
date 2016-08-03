@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
@@ -26,9 +27,15 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomTableViewCell
+        
+        cell.url = weather[indexPath.row].url
+        let imageURL:NSURL = NSURL.init(string: cell.url)!
+        
         cell.labelForHour.text = "\(weather[indexPath.row].hour):00"
         cell.labelForTypeWeather.text = "\(weather[indexPath.row].typeWeather)"
         cell.labelForTemperature.text = "\(weather[indexPath.row].temperature)°"
+        cell.imageForWeather.sd_setImageWithURL(imageURL)
+        
         return cell
     }
     
@@ -69,7 +76,8 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
                         dataAboutWeather.temperature = temp["metric"] as! String
                     }
                     dataAboutWeather.typeWeather = data["condition"] as! String
-                    
+                    dataAboutWeather.url = (data["icon_url"] as? String)!
+                    print(dataAboutWeather.url)
                     weather.append(dataAboutWeather)
                 }
             }

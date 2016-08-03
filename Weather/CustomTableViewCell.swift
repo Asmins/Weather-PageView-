@@ -15,6 +15,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var imageForWeather: UIImageView!
     @IBOutlet weak var labelForHour: UILabel!
     
+    var url = " "
     
     override func awakeFromNib() {
         super.awakeFromNib()

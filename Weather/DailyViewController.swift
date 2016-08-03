@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
@@ -30,15 +30,20 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomTableViewCellForDaily
+        
+        
         cell.labelForDate.text = "\(weather[indexPath.row].day)/\(weather[indexPath.row].month)"
         cell.labelForTypeWeather.text = "\(weather[indexPath.row].typeWeatherForDaily)"
         cell.labelForHighLowTemperature.text = "\(weather[indexPath.row].highTemperature)°/\(weather[indexPath.row].lowTemperature)°"
+        cell.url = weather[indexPath.row].url
+        let imageURL:NSURL = NSURL.init(string: cell.url)!
+        
+        cell.imageViewForTypeWeather.sd_setImageWithURL(imageURL)
+        
         return cell
     }
     
     func getWeather(){
-        print(manager.getLat())
-        print(manager.getLong())
         let reques = NSURLRequest(URL: NSURL(string: "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")!)
         let urlSesion = NSURLSession.sharedSession()
         let task = urlSesion.dataTaskWithRequest(reques,completionHandler: {(data,response,error)->Void in
@@ -86,6 +91,8 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                             }
                             dataAboutWeather.typeWeatherForDaily = data["conditions"] as! String
                             dataAboutWeather.humidity = data["avehumidity"] as! Int
+                            dataAboutWeather.url = (data["icon_url"] as? String)!
+                            
                             weather.append(dataAboutWeather)
                         }
                     }

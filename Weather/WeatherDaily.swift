@@ -20,6 +20,8 @@ class WeatherDaily{
     var humidity = 0
     var wind_speed = 0
     var uvIndex = " "
+    var url = " "
+    
     
     var avarageTemperature:Int{
         return (Int(highTemperature)! + Int(lowTemperature)!) / 2
