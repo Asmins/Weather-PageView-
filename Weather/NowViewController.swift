@@ -153,7 +153,6 @@ class NowViewController: UIViewController {
         
         
     }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "moreDetail"{
             let destinationController = segue.destinationViewController as! MoreDetailViewController
@@ -178,7 +177,7 @@ class NowViewController: UIViewController {
         }
     }
     
-    
+   
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         weatherDaily = []

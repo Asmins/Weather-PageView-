@@ -1,19 +1,37 @@
 {
   "images" : [
     {
+      "size" : "29x29",
       "idiom" : "iphone",
-      "scale" : "2x",
-      "size" : "60x60"
+      "filename" : "umbrella58x58.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "iphone",
-      "scale" : "2x",
-      "size" : "40x40"
+      "size" : "29x29",
+      "scale" : "3x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "umbrella80x80.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "iphone",
-      "scale" : "2x",
-      "size" : "29x29"
+      "size" : "40x40",
+      "scale" : "3x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "umbrella120x120.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "size" : "60x60",
+      "scale" : "3x"
     }
   ],
   "info" : {
