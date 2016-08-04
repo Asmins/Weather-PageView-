@@ -15,7 +15,6 @@
 		844053FB1D523EED00C347BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844053FA1D523EED00C347BC /* Images.xcassets */; };
 		8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */; };
 		8471E4F21D4005D100EF20F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471E4F01D4005D100EF20F7 /* Main.storyboard */; };
-		847576DB1D53210000782305 /* ViewControllerForSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847576DA1D53210000782305 /* ViewControllerForSlide.swift */; };
 		847576DD1D532E1800782305 /* TemperatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847576DC1D532E1800782305 /* TemperatureManager.swift */; };
 		847B4F001D51E29800A3CD52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */; };
 		848AE8821D44BC6B00702608 /* CustomTableViewCellForDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */; };
@@ -47,7 +46,6 @@
 		844053FA1D523EED00C347BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyMoreDetail.swift; path = ../DailyMoreDetail.swift; sourceTree = "<group>"; };
 		8471E4F11D4005D100EF20F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		847576DA1D53210000782305 /* ViewControllerForSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerForSlide.swift; sourceTree = "<group>"; };
 		847576DC1D532E1800782305 /* TemperatureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureManager.swift; sourceTree = "<group>"; };
 		847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellForDaily.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				848AE8831D44C18500702608 /* MoreDetailViewController.swift */,
 				842ADF911D50B3BC0057361E /* ViewControllerForMaps.swift */,
 				842ADF981D50BFE40057361E /* SearchResultController.swift */,
-				847576DA1D53210000782305 /* ViewControllerForSlide.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -338,7 +335,6 @@
 				8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */,
 				842ADF941D50BBFE0057361E /* CityManager.swift in Sources */,
 				84E5F6061D3CDB1400290B44 /* NowViewController.swift in Sources */,
-				847576DB1D53210000782305 /* ViewControllerForSlide.swift in Sources */,
 				84E6DEB11D4F4C2F00093062 /* FirstViewController.swift in Sources */,
 				847576DD1D532E1800782305 /* TemperatureManager.swift in Sources */,
 				848AE8841D44C18500702608 /* MoreDetailViewController.swift in Sources */,

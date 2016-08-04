@@ -131,26 +131,29 @@ class NowViewController: UIViewController {
     }
     
     func setImageView(){
-        if weatherDaily[0].typeWeatherForDaily == "Overcast"{
+        
+        switch weatherDaily[0].typeWeatherForDaily {
+        case "Overcast":
             mainImageView.image = UIImage(named: "overCast")
             imageForTypeWeather.image = UIImage(named: "CloudIcon")
-        }else if weatherDaily[0].typeWeatherForDaily == "Clear"{
+        case "Clear":
             mainImageView.image = UIImage(named: "clear")
             imageForTypeWeather.image = UIImage(named: "sun")
-        }else if weatherDaily[0].typeWeatherForDaily == "Chance of Rain"{
+        case "Chance of Rain":
             mainImageView.image = UIImage(named: "rain")
             imageForTypeWeather.image = UIImage(named: "RainIcon")
-        }else if weatherDaily[0].typeWeatherForDaily == "Partly Cloudy"{
-            mainImageView.image = UIImage(named: "cloudy")
+        case "Partly Cloudy":
+            mainImageView.image = UIImage(named: "cloud")
             imageForTypeWeather.image = UIImage(named: "CloudIcon")
-        }else if weatherDaily[0].typeWeatherForDaily == "Chance of a Thunderstorm"{
+        case "Chance of a Thunderstorm":
             mainImageView.image = UIImage(named: "storm-1")
             imageForTypeWeather.image = UIImage(named: "storm")
-        }else if weatherDaily[0].typeWeatherForDaily == "Thunderstorm"{
+        case "Thunderstorm":
             mainImageView.image = UIImage(named: "storm-1")
             imageForTypeWeather.image = UIImage(named: "storm")
+        default:
+            print("Maybe in latest update we add new feature")
         }
-        
         
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

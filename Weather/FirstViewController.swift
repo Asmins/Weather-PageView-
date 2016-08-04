@@ -37,13 +37,6 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
         navigationController?.navigationBarHidden = true
         labelForNameCity.text = "\(manager.getName())"
         
-        
-        menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), forControlEvents: .TouchUpInside)
-        
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.revealViewController().rearViewRevealWidth = 200
-        view.reloadInputViews()
-        
     }
     
     
@@ -85,7 +78,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
         })
         
         
-        let cancel = UIAlertAction(title: "Exit", style: UIAlertActionStyle.Cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         
         
         settingMenu.addAction(findMeToGPS)
