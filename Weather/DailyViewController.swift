@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var manager = CityManager()
     var tempManger = TemperatureManager()
@@ -18,7 +18,7 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     var weather = [WeatherDaily]()
     
-   
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         weather = []
@@ -28,20 +28,20 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weather.count
     }
-
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomTableViewCellForDaily
         
         if tempManger.getCheck() == false{
-             cell.labelForHighLowTemperature.text = "\(weather[indexPath.row].highTemperature)°/\(weather[indexPath.row].lowTemperature)°"
+            cell.labelForHighLowTemperature.text = "\(weather[indexPath.row].highTemperature)°/\(weather[indexPath.row].lowTemperature)°"
         }else{
             cell.labelForHighLowTemperature.text = "\(weather[indexPath.row].highTemperatureFahrenheit)°/\(weather[indexPath.row].lowTemperatureFahrenheit)°"
         }
         
         cell.labelForDate.text = "\(weather[indexPath.row].day)/\(weather[indexPath.row].month)"
         cell.labelForTypeWeather.text = "\(weather[indexPath.row].typeWeatherForDaily)"
-       
+        
         cell.url = weather[indexPath.row].url
         let imageURL:NSURL = NSURL.init(string: cell.url)!
         
@@ -108,34 +108,34 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 }
             }
         }catch{
-                print("Error")
-            }
-            return weather
+            print("Error")
+        }
+        return weather
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DailyMoreDetail"{
-         if let indexPath = tableView.indexPathForSelectedRow{
+            if let indexPath = tableView.indexPathForSelectedRow{
                 let destinationController = segue.destinationViewController as! DailyMoreDetail
-            
-                    if tempManger.getCheck() == false{
-                        destinationController.tempHigh = "\(weather[indexPath.row].highTemperature)°"
-                        destinationController.tempLow = "\(weather[indexPath.row].lowTemperature)°"
-                    }else{
-                        destinationController.tempHigh = "\(weather[indexPath.row].highTemperatureFahrenheit)°"
-                        destinationController.tempLow = "\(weather[indexPath.row].lowTemperatureFahrenheit)°"
-                    }
-                    destinationController.date = "\(weather[indexPath.row].day)/\(weather[indexPath.row].month)"
-                    destinationController.weekDay = weather[indexPath.row].weekDay
-                    destinationController.nameMonth = weather[indexPath.row].nameMonth
-                    destinationController.typeWeather = weather[indexPath.row].typeWeatherForDaily
-            
-                    destinationController.humidity = "\(weather[indexPath.row].humidity)%"
-                    destinationController.windSpeed = "\(weather[indexPath.row].wind_speed)Km/H"
+                
+                if tempManger.getCheck() == false{
+                    destinationController.tempHigh = "\(weather[indexPath.row].highTemperature)°"
+                    destinationController.tempLow = "\(weather[indexPath.row].lowTemperature)°"
+                }else{
+                    destinationController.tempHigh = "\(weather[indexPath.row].highTemperatureFahrenheit)°"
+                    destinationController.tempLow = "\(weather[indexPath.row].lowTemperatureFahrenheit)°"
                 }
+                destinationController.date = "\(weather[indexPath.row].day)/\(weather[indexPath.row].month)"
+                destinationController.weekDay = weather[indexPath.row].weekDay
+                destinationController.nameMonth = weather[indexPath.row].nameMonth
+                destinationController.typeWeather = weather[indexPath.row].typeWeatherForDaily
+                
+                destinationController.humidity = "\(weather[indexPath.row].humidity)%"
+                destinationController.windSpeed = "\(weather[indexPath.row].wind_speed)Km/H"
             }
+        }
     }
-
+    
     
 }

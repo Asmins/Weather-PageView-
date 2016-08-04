@@ -151,6 +151,9 @@ class NowViewController: UIViewController {
         case "Thunderstorm":
             mainImageView.image = UIImage(named: "storm-1")
             imageForTypeWeather.image = UIImage(named: "storm")
+        case "Rain":
+            mainImageView.image = UIImage(named: "rain")
+            imageForTypeWeather.image = UIImage(named: "RainIcon")
         default:
             print("Maybe in latest update we add new feature")
         }
@@ -159,7 +162,6 @@ class NowViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "moreDetail"{
             let destinationController = segue.destinationViewController as! MoreDetailViewController
-            
             
             if managerTemp.getCheck() == false{
                 destinationController.highTemperature = "\(self.weatherDaily[0].highTemperature)°"
@@ -175,9 +177,7 @@ class NowViewController: UIViewController {
             destinationController.nameMonth = self.weatherDaily[0].nameMonth
             destinationController.typeWeather = self.weatherDaily[0].typeWeatherForDaily
             destinationController.uvIndex = labelForUvIndex.text!
-            
-            
-        }
+            }
     }
     
    
@@ -186,9 +186,7 @@ class NowViewController: UIViewController {
         weatherDaily = []
         getDataAboutWeather("http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
         getDataAboutWeather("http://api.owm.io/air/1.0/uvi/current?lat=\(manager.getLat())&lon=\(manager.getLong())&appid=fe96847f962cbea42c4d879c33daf010")
-        
-        
-        
+       
     }
     
     

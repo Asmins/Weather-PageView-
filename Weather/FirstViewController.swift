@@ -57,13 +57,13 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     
-   
+    
     @IBAction func showSetting(sender: AnyObject) {
         let settingMenu = UIAlertController(title: nil, message: "Setting", preferredStyle: .ActionSheet)
         
         let findMeToGPS = UIAlertAction(title: "Find Me (GPS)", style: UIAlertActionStyle.Default , handler: {(action)-> Void in
-           self.locationManager.startUpdatingLocation()
-        
+            self.locationManager.startUpdatingLocation()
+            
         })
         
         let changeTo = UIAlertAction(title: "Change to F°/C°", style: UIAlertActionStyle.Default, handler: {(action)-> Void in
@@ -115,7 +115,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
             }
         }
         task.resume()
-
+        
     }
     
     @IBAction func showNowView(sender: AnyObject) {

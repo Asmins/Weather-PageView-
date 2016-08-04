@@ -65,7 +65,7 @@ class ViewControllerForMaps: UIViewController,UISearchBarDelegate,LocateOnMap {
                 return
             }
             for result in results! {
-                if let result = result as? GMSAutocompletePrediction {
+                if results != nil {
                     self.cityArray.append(result.attributedFullText.string)
                 }
             }

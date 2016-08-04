@@ -21,9 +21,9 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
             instantiateViewControllerWithIdentifier("\(name)ViewController")
     }
     
-   
     
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
@@ -42,7 +42,7 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
         
         let previousIndex = viewControllerIndex - 1
         
-       
+        
         guard previousIndex >= 0 else {
             return orderedViewControllers.last
         }
@@ -73,7 +73,7 @@ class PageViewController: UIPageViewController,UIPageViewControllerDataSource {
         
         return orderedViewControllers[nextIndex]
     }
-
+    
     
     override func prefersStatusBarHidden() -> Bool {
         return true

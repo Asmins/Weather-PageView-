@@ -9,7 +9,7 @@
 import UIKit
 
 class DailyMoreDetail: UIViewController {
-
+    
     @IBOutlet weak var labelForDate: UILabel!
     @IBOutlet weak var labelForWeekDay: UILabel!
     @IBOutlet weak var labelForNameMonth: UILabel!
@@ -44,7 +44,8 @@ class DailyMoreDetail: UIViewController {
     }
     
     @IBAction func backToViewController(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let toShowFirstViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FirstView") as! FirstViewController
+        self.navigationController?.pushViewController(toShowFirstViewController, animated: true)
     }
     
     override func prefersStatusBarHidden() -> Bool {

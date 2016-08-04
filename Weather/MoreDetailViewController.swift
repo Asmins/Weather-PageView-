@@ -9,7 +9,7 @@
 import UIKit
 
 class MoreDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var labelForWindSpeed: UILabel!
     @IBOutlet weak var labelForHumidity: UILabel!
     @IBOutlet weak var labelForUvIndex: UILabel!
@@ -30,7 +30,9 @@ class MoreDetailViewController: UIViewController {
     var lowTemperature = " "
     var windSpeed = " "
     @IBAction func backButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let showFirstViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FirstView") as! FirstViewController
+        
+        self.navigationController?.pushViewController(showFirstViewController, animated: true)
     }
     
     override func viewDidLoad() {
@@ -48,11 +50,11 @@ class MoreDetailViewController: UIViewController {
             labelForUvIndex.textColor = UIColor.redColor()
         }
     }
-
+    
     
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
+    
 }
