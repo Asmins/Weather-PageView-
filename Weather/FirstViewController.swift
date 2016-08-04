@@ -16,6 +16,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
     
     var manager = CityManager()
     var locationManager:CLLocationManager!
+    var tempCheck = TemperatureManager()
     
     var location: CLLocation!{
         didSet{
@@ -35,6 +36,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
         
         navigationController?.navigationBarHidden = true
         labelForNameCity.text = "\(manager.getName())"
+        
         
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), forControlEvents: .TouchUpInside)
         
@@ -73,7 +75,15 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
         
         let changeTo = UIAlertAction(title: "Change to F°/C°", style: UIAlertActionStyle.Default, handler: {(action)-> Void in
             
+            
+            if self.tempCheck.getCheck() == false{
+                self.tempCheck.setCheck(true)
+            }else{
+                self.tempCheck.setCheck(false)
+            }
+            
         })
+        
         
         let cancel = UIAlertAction(title: "Exit", style: UIAlertActionStyle.Cancel, handler: nil)
         

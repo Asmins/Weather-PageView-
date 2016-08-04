@@ -12,7 +12,9 @@ class WeatherDaily{
 
     var typeWeatherForDaily = " "
     var lowTemperature = " "
+    var lowTemperatureFahrenheit = " "
     var highTemperature = " "
+    var highTemperatureFahrenheit = " "
     var day = 0
     var month = 0
     var nameMonth = " "

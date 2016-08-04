@@ -10,8 +10,9 @@ import UIKit
 
 class CustomTableViewCellForSlideMenu: UITableViewCell {
 
-    @IBOutlet weak var imageViewForSlideItems: UIImageView!
-    @IBOutlet weak var labelForSlideItems: UILabel!
+    @IBOutlet weak var imageViewForItem: UIImageView!
+    @IBOutlet weak var labelForItems: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

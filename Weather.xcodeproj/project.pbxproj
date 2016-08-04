@@ -12,8 +12,11 @@
 		842ADF941D50BBFE0057361E /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF931D50BBFE0057361E /* CityManager.swift */; };
 		842ADF961D50BC970057361E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF951D50BC970057361E /* City.swift */; };
 		842ADF991D50BFE40057361E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF981D50BFE40057361E /* SearchResultController.swift */; };
+		844053FB1D523EED00C347BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844053FA1D523EED00C347BC /* Images.xcassets */; };
 		8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */; };
 		8471E4F21D4005D100EF20F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471E4F01D4005D100EF20F7 /* Main.storyboard */; };
+		847576DB1D53210000782305 /* ViewControllerForSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847576DA1D53210000782305 /* ViewControllerForSlide.swift */; };
+		847576DD1D532E1800782305 /* TemperatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847576DC1D532E1800782305 /* TemperatureManager.swift */; };
 		847B4F001D51E29800A3CD52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */; };
 		848AE8821D44BC6B00702608 /* CustomTableViewCellForDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */; };
 		848AE8841D44C18500702608 /* MoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848AE8831D44C18500702608 /* MoreDetailViewController.swift */; };
@@ -30,7 +33,6 @@
 		84E6DEB11D4F4C2F00093062 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6DEB01D4F4C2F00093062 /* FirstViewController.swift */; };
 		84E6DEB41D4F526900093062 /* weather60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E6DEB31D4F526900093062 /* weather60x60.png */; };
 		84F224F61D50870C0082279D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F224F51D50870C0082279D /* SWRevealViewController.m */; };
-		84F224F81D5092800082279D /* TableViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F224F71D5092800082279D /* TableViewContoller.swift */; };
 		84F224FC1D5095AB0082279D /* CustomTableViewCellForSlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F224FB1D5095AB0082279D /* CustomTableViewCellForSlideMenu.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +44,11 @@
 		842ADF981D50BFE40057361E /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		844053F61D5231D800C347BC /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = "<group>"; };
 		844053F81D52321800C347BC /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = "<group>"; };
+		844053FA1D523EED00C347BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyMoreDetail.swift; path = ../DailyMoreDetail.swift; sourceTree = "<group>"; };
 		8471E4F11D4005D100EF20F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847576DA1D53210000782305 /* ViewControllerForSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerForSlide.swift; sourceTree = "<group>"; };
+		847576DC1D532E1800782305 /* TemperatureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureManager.swift; sourceTree = "<group>"; };
 		847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		848AE8811D44BC6B00702608 /* CustomTableViewCellForDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellForDaily.swift; sourceTree = "<group>"; };
 		848AE8831D44C18500702608 /* MoreDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +69,6 @@
 		84F224F31D50870B0082279D /* Weather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weather-Bridging-Header.h"; sourceTree = "<group>"; };
 		84F224F41D50870C0082279D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		84F224F51D50870C0082279D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		84F224F71D5092800082279D /* TableViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewContoller.swift; sourceTree = "<group>"; };
 		84F224FB1D5095AB0082279D /* CustomTableViewCellForSlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCellForSlideMenu.swift; path = ../CustomTableViewCellForSlideMenu.swift; sourceTree = "<group>"; };
 		C5CDB3545D1CF15C17E8B9A9 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		FBD816350A35BBBA4C4DF9F8 /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,15 +96,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		842ADF971D50BE380057361E /* City */ = {
-			isa = PBXGroup;
-			children = (
-				842ADF931D50BBFE0057361E /* CityManager.swift */,
-				842ADF951D50BC970057361E /* City.swift */,
-			);
-			name = City;
-			sourceTree = "<group>";
-		};
 		84E5913D1D3CFB54003F2E67 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,10 +108,8 @@
 		84E5913E1D3CFB6E003F2E67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				842ADF971D50BE380057361E /* City */,
 				84E591401D3CFC55003F2E67 /* Cell */,
 				84E6DEB01D4F4C2F00093062 /* FirstViewController.swift */,
-				84F224F71D5092800082279D /* TableViewContoller.swift */,
 				84E5F6031D3CDAAE00290B44 /* PageViewController.swift */,
 				84E5F6051D3CDB1400290B44 /* NowViewController.swift */,
 				84E5F6071D3CDB1D00290B44 /* HourlyViewController.swift */,
@@ -125,6 +118,7 @@
 				848AE8831D44C18500702608 /* MoreDetailViewController.swift */,
 				842ADF911D50B3BC0057361E /* ViewControllerForMaps.swift */,
 				842ADF981D50BFE40057361E /* SearchResultController.swift */,
+				847576DA1D53210000782305 /* ViewControllerForSlide.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -135,6 +129,9 @@
 				84DD728A1D3E3D5E0009B116 /* WeatherDaily.swift */,
 				84DD72901D3E5D210009B116 /* WeatherHourly.swift */,
 				84E5F5F11D3CDA8100290B44 /* AppDelegate.swift */,
+				842ADF931D50BBFE0057361E /* CityManager.swift */,
+				842ADF951D50BC970057361E /* City.swift */,
+				847576DC1D532E1800782305 /* TemperatureManager.swift */,
 			);
 			name = Another;
 			sourceTree = "<group>";
@@ -177,6 +174,7 @@
 				84E5913D1D3CFB54003F2E67 /* View */,
 				84E5F5F81D3CDA8100290B44 /* Assets.xcassets */,
 				84E5F5FD1D3CDA8100290B44 /* Info.plist */,
+				844053FA1D523EED00C347BC /* Images.xcassets */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -272,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8471E4F21D4005D100EF20F7 /* Main.storyboard in Resources */,
+				844053FB1D523EED00C347BC /* Images.xcassets in Resources */,
 				84E5F5FC1D3CDA8100290B44 /* LaunchScreen.storyboard in Resources */,
 				84E5F5F91D3CDA8100290B44 /* Assets.xcassets in Resources */,
 				84E6DEB41D4F526900093062 /* weather60x60.png in Resources */,
@@ -339,7 +338,9 @@
 				8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */,
 				842ADF941D50BBFE0057361E /* CityManager.swift in Sources */,
 				84E5F6061D3CDB1400290B44 /* NowViewController.swift in Sources */,
+				847576DB1D53210000782305 /* ViewControllerForSlide.swift in Sources */,
 				84E6DEB11D4F4C2F00093062 /* FirstViewController.swift in Sources */,
+				847576DD1D532E1800782305 /* TemperatureManager.swift in Sources */,
 				848AE8841D44C18500702608 /* MoreDetailViewController.swift in Sources */,
 				84DD728B1D3E3D5E0009B116 /* WeatherDaily.swift in Sources */,
 				84E5F5F21D3CDA8100290B44 /* AppDelegate.swift in Sources */,
@@ -349,7 +350,6 @@
 				842ADF991D50BFE40057361E /* SearchResultController.swift in Sources */,
 				84E5F6041D3CDAAE00290B44 /* PageViewController.swift in Sources */,
 				84E5F6081D3CDB1D00290B44 /* HourlyViewController.swift in Sources */,
-				84F224F81D5092800082279D /* TableViewContoller.swift in Sources */,
 				84F224FC1D5095AB0082279D /* CustomTableViewCellForSlideMenu.swift in Sources */,
 				84E5F60A1D3CDB2600290B44 /* DailyViewController.swift in Sources */,
 			);
@@ -465,6 +465,7 @@
 			baseConfigurationReference = C5CDB3545D1CF15C17E8B9A9 /* Pods-Weather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,6 +485,7 @@
 			baseConfigurationReference = FBD816350A35BBBA4C4DF9F8 /* Pods-Weather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

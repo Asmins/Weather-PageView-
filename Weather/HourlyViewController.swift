@@ -12,7 +12,7 @@ import SDWebImage
 class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var manager = CityManager()
-    
+    var tempManager = TemperatureManager()
     var weather = [WeatherHourly]()
     
     override func viewWillAppear(animated: Bool) {
@@ -31,9 +31,15 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
         cell.url = weather[indexPath.row].url
         let imageURL:NSURL = NSURL.init(string: cell.url)!
         
+        if tempManager.getCheck() == false{
+            
+            cell.labelForTemperature.text = "\(weather[indexPath.row].temperature)°"
+        }
+        else{
+            cell.labelForTemperature.text = "\(weather[indexPath.row].tempFahrenheit)°"
+        }
         cell.labelForHour.text = "\(weather[indexPath.row].hour):00"
         cell.labelForTypeWeather.text = "\(weather[indexPath.row].typeWeather)"
-        cell.labelForTemperature.text = "\(weather[indexPath.row].temperature)°"
         cell.imageForWeather.sd_setImageWithURL(imageURL)
         
         return cell
@@ -74,10 +80,11 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
                     }
                     if let temp = data["temp"] as? NSDictionary{
                         dataAboutWeather.temperature = temp["metric"] as! String
+                        dataAboutWeather.tempFahrenheit = temp["english"] as! String
                     }
                     dataAboutWeather.typeWeather = data["condition"] as! String
                     dataAboutWeather.url = (data["icon_url"] as? String)!
-                    print(dataAboutWeather.url)
+                    
                     weather.append(dataAboutWeather)
                 }
             }

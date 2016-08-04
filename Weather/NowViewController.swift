@@ -9,7 +9,7 @@
 import UIKit
 
 class NowViewController: UIViewController {
-
+    
     @IBOutlet weak var labelForCurrentTemperature: UILabel!
     @IBOutlet weak var labelForTypeWeather: UILabel!
     @IBOutlet weak var labelForNextDayTypeWeather: UILabel!
@@ -27,6 +27,7 @@ class NowViewController: UIViewController {
     
     @IBOutlet weak var activitityInd: UIActivityIndicatorView!
     var manager = CityManager()
+    var managerTemp = TemperatureManager()
     var weatherDaily = [WeatherDaily]()
     var uvIndex = 0.0
     
@@ -36,16 +37,16 @@ class NowViewController: UIViewController {
         let urlSesion = NSURLSession.sharedSession()
         
         let task = urlSesion.dataTaskWithRequest(request, completionHandler: {(data,respone,error) -> Void in
-        
+            
             dispatch_async(dispatch_get_main_queue()) {
-            if let error = error{
-                print(error)
-                return
-            }
-            if let data = data{
-                
-                self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
-                
+                if let error = error{
+                    print(error)
+                    return
+                }
+                if let data = data{
+                    
+                    self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
+                    
                 }
             }
         })
@@ -62,7 +63,7 @@ class NowViewController: UIViewController {
                         
                         for data in forecastday {
                             let dataAboutWeather = WeatherDaily()
-                          
+                            
                             if let date = data["date"] as? [String:AnyObject]{
                                 dataAboutWeather.day = date["day"] as! Int
                                 dataAboutWeather.month = date["month"] as! Int
@@ -73,10 +74,13 @@ class NowViewController: UIViewController {
                             
                             if let high = data["high"] as? [String:AnyObject]{
                                 dataAboutWeather.highTemperature = high["celsius"] as! String
+                                dataAboutWeather.highTemperatureFahrenheit = high["fahrenheit"] as! String
                                 
                             }
                             if let low  = data["low"] as? [String:AnyObject]{
                                 dataAboutWeather.lowTemperature = low["celsius"] as! String
+                                dataAboutWeather.lowTemperatureFahrenheit = low["fahrenheit"] as! String
+                                
                             }
                             if let windSpeed = data["avewind"] as? [String:AnyObject]{
                                 dataAboutWeather.wind_speed = windSpeed["kph"] as! Int
@@ -84,16 +88,23 @@ class NowViewController: UIViewController {
                             dataAboutWeather.typeWeatherForDaily = data["conditions"] as! String
                             dataAboutWeather.humidity = data["avehumidity"] as! Int
                             weatherDaily.append(dataAboutWeather)
-                           }
+                        }
                         self.labelForWindSpeed.text = "\(self.weatherDaily[0].wind_speed) KM/H"
                         self.labelForHumidity.text = "\(self.weatherDaily[0].humidity)%"
                         self.labelForTypeWeather.text = self.weatherDaily[0].typeWeatherForDaily
-                        self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
                         self.labelForNextDayTypeWeather.text = self.weatherDaily[1].typeWeatherForDaily
-                        self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
                         setImageView()
+                        
+                        if managerTemp.getCheck() == false{
+                            self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
+                            self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
+                            
+                        }else{
+                            self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperatureFahrenheit)°"
+                            self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperatureFahrenheit)°"
                         }
                     }
+                }
             }else if let valueUvIndex = jsonResult!["value"] as? Double{
                 switch valueUvIndex {
                 case 0..<2.9 :
@@ -146,9 +157,16 @@ class NowViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "moreDetail"{
             let destinationController = segue.destinationViewController as! MoreDetailViewController
+            
+            
+            if managerTemp.getCheck() == false{
+                destinationController.highTemperature = "\(self.weatherDaily[0].highTemperature)°"
+                destinationController.lowTemperature = "\(self.weatherDaily[0].lowTemperature)°"
+            }else{
+                destinationController.highTemperature = "\(self.weatherDaily[0].highTemperatureFahrenheit)°"
+                destinationController.lowTemperature = "\(self.weatherDaily[0].lowTemperatureFahrenheit)°"
+            }
             destinationController.date = "\(self.weatherDaily[0].day)/\(self.weatherDaily[0].month)"
-            destinationController.highTemperature = "\(self.weatherDaily[0].highTemperature)°"
-            destinationController.lowTemperature = "\(self.weatherDaily[0].lowTemperature)°"
             destinationController.humidity = "\(self.weatherDaily[0].humidity)%"
             destinationController.windSpeed = "\(self.weatherDaily[0].wind_speed)KM/H"
             destinationController.weekDay = self.weatherDaily[0].weekDay
@@ -176,7 +194,7 @@ class NowViewController: UIViewController {
     @IBAction func moreDetail(sender: AnyObject) {
         
     }
-
- 
-
+    
+    
+    
 }
