@@ -857,7 +857,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XU9-yn-oVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-252" y="2447"/>
+            <point key="canvasLocation" x="-252" y="2393"/>
         </scene>
         <!--More Detail-->
         <scene sceneID="gHZ-LF-jbq">
@@ -994,10 +994,10 @@
                                     <constraint firstAttribute="trailing" secondItem="F0f-sJ-qwG" secondAttribute="trailing" constant="130" id="r1Q-9t-du0"/>
                                     <constraint firstItem="0sl-NV-dZ8" firstAttribute="leading" secondItem="mla-Cg-GIQ" secondAttribute="leading" constant="33" id="rIi-Xj-TyH"/>
                                     <constraint firstItem="F0f-sJ-qwG" firstAttribute="leading" secondItem="mla-Cg-GIQ" secondAttribute="leading" constant="130" id="sMK-KC-GsL"/>
-                                    <constraint firstItem="3fr-i8-cAz" firstAttribute="leading" secondItem="mla-Cg-GIQ" secondAttribute="leading" constant="135" id="skG-WK-FRN"/>
+                                    <constraint firstItem="3fr-i8-cAz" firstAttribute="leading" secondItem="mla-Cg-GIQ" secondAttribute="leading" constant="120" id="skG-WK-FRN"/>
                                     <constraint firstItem="eka-4r-EPi" firstAttribute="leading" secondItem="mla-Cg-GIQ" secondAttribute="leading" constant="78" id="tnW-5U-gpV"/>
                                     <constraint firstItem="1jy-zY-fHK" firstAttribute="top" secondItem="3fr-i8-cAz" secondAttribute="bottom" constant="65" id="w1d-n2-5cZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="3fr-i8-cAz" secondAttribute="trailing" constant="135" id="yZb-Xo-2mG"/>
+                                    <constraint firstAttribute="trailing" secondItem="3fr-i8-cAz" secondAttribute="trailing" constant="120" id="yZb-Xo-2mG"/>
                                     <constraint firstItem="5Ep-Ut-0ZW" firstAttribute="leading" secondItem="mla-Cg-GIQ" secondAttribute="leading" constant="150" id="zNd-ji-x3P"/>
                                 </constraints>
                                 <variation key="default">
@@ -1153,7 +1153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kB2-t2-Avy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1104" y="2447"/>
+            <point key="canvasLocation" x="1104" y="2393"/>
         </scene>
         <!--Hourly View Controller-->
         <scene sceneID="a3V-N8-7fp">
@@ -1722,10 +1722,10 @@
                                 <exclude reference="Gy8-Ym-apk"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Fgk-TU-5UK"/>
                                 <exclude reference="jBx-y2-x7v"/>
                                 <exclude reference="ueL-jQ-wW5"/>
                                 <exclude reference="xd3-mJ-Ems"/>
-                                <exclude reference="Fgk-TU-5UK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1733,10 +1733,10 @@
                                 <include reference="Gy8-Ym-apk"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Fgk-TU-5UK"/>
                                 <include reference="jBx-y2-x7v"/>
                                 <include reference="ueL-jQ-wW5"/>
                                 <include reference="xd3-mJ-Ems"/>
-                                <include reference="Fgk-TU-5UK"/>
                             </mask>
                         </variation>
                     </view>
@@ -1783,6 +1783,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cqh-l6-Zhd" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zr0-iU-pcg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Agg-1f-rAQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

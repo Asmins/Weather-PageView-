@@ -14,6 +14,9 @@
 		842ADF991D50BFE40057361E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF981D50BFE40057361E /* SearchResultController.swift */; };
 		844053FB1D523EED00C347BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844053FA1D523EED00C347BC /* Images.xcassets */; };
 		8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */; };
+		84698F461D58C7120076420B /* ForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84698F451D58C7120076420B /* ForeCast.swift */; };
+		84698F481D58C74C0076420B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84698F471D58C74C0076420B /* SwiftyJSON.framework */; };
+		84698F4B1D58C7FE0076420B /* SimpleForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84698F4A1D58C7FE0076420B /* SimpleForeCast.swift */; };
 		8471E4F21D4005D100EF20F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8471E4F01D4005D100EF20F7 /* Main.storyboard */; };
 		847576DD1D532E1800782305 /* TemperatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847576DC1D532E1800782305 /* TemperatureManager.swift */; };
 		847B4F001D51E29800A3CD52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */; };
@@ -42,6 +45,9 @@
 		844053F81D52321800C347BC /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = "<group>"; };
 		844053FA1D523EED00C347BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyMoreDetail.swift; path = ../DailyMoreDetail.swift; sourceTree = "<group>"; };
+		84698F451D58C7120076420B /* ForeCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeCast.swift; sourceTree = "<group>"; };
+		84698F471D58C74C0076420B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/Weather-gnmyygvwryemszfrlqodxkxbebqf/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		84698F4A1D58C7FE0076420B /* SimpleForeCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleForeCast.swift; sourceTree = "<group>"; };
 		8471E4F11D4005D100EF20F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		847576DC1D532E1800782305 /* TemperatureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureManager.swift; sourceTree = "<group>"; };
 		847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84698F481D58C74C0076420B /* SwiftyJSON.framework in Frameworks */,
 				847B4F001D51E29800A3CD52 /* CoreLocation.framework in Frameworks */,
 				0CBE9F8864F7CB3C5D38F74D /* Pods_Weather.framework in Frameworks */,
 			);
@@ -84,6 +91,15 @@
 				FBD816350A35BBBA4C4DF9F8 /* Pods-Weather.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		84698F441D58C6FD0076420B /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				84698F451D58C7120076420B /* ForeCast.swift */,
+				84698F4A1D58C7FE0076420B /* SimpleForeCast.swift */,
+			);
+			name = SwiftyJSON;
 			sourceTree = "<group>";
 		};
 		84E5913D1D3CFB54003F2E67 /* View */ = {
@@ -137,6 +153,7 @@
 		84E5F5E51D3CDA8100290B44 = {
 			isa = PBXGroup;
 			children = (
+				84698F441D58C6FD0076420B /* SwiftyJSON */,
 				84E5F5F01D3CDA8100290B44 /* Weather */,
 				84E5F5EF1D3CDA8100290B44 /* Products */,
 				7A28D54342F0A0E5FCA12608 /* Pods */,
@@ -159,8 +176,8 @@
 				84E5913E1D3CFB6E003F2E67 /* Controller */,
 				84E5913D1D3CFB54003F2E67 /* View */,
 				84E5F5F81D3CDA8100290B44 /* Assets.xcassets */,
-				84E5F5FD1D3CDA8100290B44 /* Info.plist */,
 				844053FA1D523EED00C347BC /* Images.xcassets */,
+				84E5F5FD1D3CDA8100290B44 /* Info.plist */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -168,6 +185,7 @@
 		A8C89DA86A85279E6951C2D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84698F471D58C74C0076420B /* SwiftyJSON.framework */,
 				844053F81D52321800C347BC /* SDWebImage.framework */,
 				844053F61D5231D800C347BC /* SDWebImage.framework */,
 				847B4EFF1D51E29800A3CD52 /* CoreLocation.framework */,
@@ -301,6 +319,8 @@
 			files = (
 				84E5913A1D3CF97E003F2E67 /* CustomTableViewCell.swift in Sources */,
 				842ADF961D50BC970057361E /* City.swift in Sources */,
+				84698F461D58C7120076420B /* ForeCast.swift in Sources */,
+				84698F4B1D58C7FE0076420B /* SimpleForeCast.swift in Sources */,
 				8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */,
 				842ADF941D50BBFE0057361E /* CityManager.swift in Sources */,
 				84E5F6061D3CDB1400290B44 /* NowViewController .swift in Sources */,

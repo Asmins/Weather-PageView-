@@ -18,6 +18,8 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate,CAPSPageMe
     
     var pageMenu : CAPSPageMenu?
     
+    var viewControllerArray : [UIViewController] = []
+    
     @IBOutlet weak var lowView: UIView!
     
     var location: CLLocation!{
@@ -26,7 +28,44 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate,CAPSPageMe
             manager.saveLong(location.coordinate.longitude)
             self.getNameCity(Float(location.coordinate.latitude), long: Float(location.coordinate.longitude))
         }
+        
     }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let nowViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NowViewController")
+        nowViewController?.title = "Now"
+        viewControllerArray.append(nowViewController!)
+        
+        let hourlyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HourlyViewController")
+        hourlyViewController?.title = "Hourly"
+        viewControllerArray.append(hourlyViewController!)
+        
+        let dailyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DailyViewController")
+        dailyViewController?.title = "Daily"
+        viewControllerArray.append(dailyViewController!)
+        
+        pageMenu?.delegate = self
+        
+        let menuParam: [CAPSPageMenuOption] = [.MenuItemSeparatorWidth(1.0),.MenuMargin(20.0),.MenuHeight(40.0),
+                                               .UseMenuLikeSegmentedControl(true),
+                                               .MenuItemSeparatorRoundEdges(true),
+                                               .SelectionIndicatorHeight(2.0),
+                                               .MenuItemSeparatorPercentageHeight(0.5),
+                                               .SelectionIndicatorColor(UIColor.whiteColor()),
+                                               .CenterMenuItems(true),
+                                               .SelectedMenuItemLabelColor(UIColor.whiteColor()),
+                                               .MenuItemFont(UIFont(name: "Apple SD Gothic Neo", size: 19.0)!),
+                                               .ScrollMenuBackgroundColor(UIColor(red: 180.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            )
+            
+        ]
+        pageMenu = CAPSPageMenu(viewControllers: viewControllerArray, frame: CGRectMake(0.0, 0.0,self.view.frame.size.width, UIScreen.mainScreen().bounds.size.height), pageMenuOptions: menuParam)
+        
+        
+    }
+    
     
     @IBAction func showMapView(sender: AnyObject) {
         let toShowMapsView = self.storyboard?.instantiateViewControllerWithIdentifier("MapsView") as! ViewControllerForMaps
@@ -44,37 +83,8 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate,CAPSPageMe
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         
-        
-        var viewControllerArray : [UIViewController] = []
-        
-        let nowViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NowViewController")
-        nowViewController?.title = "Now"
-        viewControllerArray.append(nowViewController!)
-        
-        let hourlyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HourlyViewController")
-        hourlyViewController?.title = "Hourly"
-        viewControllerArray.append(hourlyViewController!)
-        
-        let dailyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DailyViewController")
-        dailyViewController?.title = "Daily"
-        viewControllerArray.append(dailyViewController!)
-        
-        let menuParam: [CAPSPageMenuOption] = [.MenuItemSeparatorWidth(1.0),.MenuMargin(20.0),.MenuHeight(40.0),
-                                               .UseMenuLikeSegmentedControl(true),
-                                               .MenuItemSeparatorRoundEdges(true),
-                                               .SelectionIndicatorHeight(2.0),
-                                               .MenuItemSeparatorPercentageHeight(0.5),
-                                               .SelectionIndicatorColor(UIColor.whiteColor()),
-                                               .CenterMenuItems(true),
-                                               .SelectedMenuItemLabelColor(UIColor.whiteColor()),
-                                               .MenuItemFont(UIFont(name: "Apple SD Gothic Neo", size: 19.0)!),
-                                               .ScrollMenuBackgroundColor(UIColor(red: 180.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-            )
-            
-        ]
-        pageMenu = CAPSPageMenu(viewControllers: viewControllerArray, frame: CGRectMake(0.0, 0.0,self.view.frame.size.width, UIScreen.mainScreen().bounds.size.height), pageMenuOptions: menuParam)
-        pageMenu?.delegate = self
         self.lowView.addSubview(pageMenu!.view)
+        
     }
     
     

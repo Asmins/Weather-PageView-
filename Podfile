@@ -7,5 +7,6 @@ target 'Weather' do
 pod ‘GoogleMaps’
 pod 'SDWebImage', '~>3.7’
 pod 'PageMenu'
+pod 'SwiftyJSON'
 end
 

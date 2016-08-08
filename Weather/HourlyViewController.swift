@@ -28,8 +28,6 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomTableViewCell
         
-        cell.url = weather[indexPath.row].url
-        let imageURL:NSURL = NSURL.init(string: cell.url)!
         
         if tempManager.getCheck() == false{
             
@@ -40,6 +38,10 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         cell.labelForHour.text = "\(weather[indexPath.row].hour):00"
         cell.labelForTypeWeather.text = "\(weather[indexPath.row].typeWeather)"
+        
+        cell.url = weather[indexPath.row].url
+        let imageURL:NSURL = NSURL.init(string: cell.url)!
+        
         cell.imageForWeather.sd_setImageWithURL(imageURL)
         
         return cell

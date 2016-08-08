@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class NowViewController: UIViewController {
     
@@ -26,6 +27,12 @@ class NowViewController: UIViewController {
     @IBOutlet weak var imageForTypeWeather: UIImageView!
     
     @IBOutlet weak var activitityInd: UIActivityIndicatorView!
+    
+    var foreCast = ForeCast()
+    var simpleForeCast = SimpleForeCast()
+    
+    
+    
     var manager = CityManager()
     var managerTemp = TemperatureManager()
     var weatherDaily = [WeatherDaily]()
@@ -37,6 +44,11 @@ class NowViewController: UIViewController {
         let urlSesion = NSURLSession.sharedSession()
         
         let task = urlSesion.dataTaskWithRequest(request, completionHandler: {(data,respone,error) -> Void in
+            
+            let json = JSON(data:data!)
+            let forecast = json["forecast"]
+        
+            
             
             dispatch_async(dispatch_get_main_queue()) {
                 if let error = error{
