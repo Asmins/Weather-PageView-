@@ -117,22 +117,23 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DailyMoreDetail"{
             if let indexPath = tableView.indexPathForSelectedRow{
-                let destinationController = segue.destinationViewController as! DailyMoreDetail
+                let destinationController = segue.destinationViewController as! UINavigationController
+                let targetController = destinationController.topViewController as! DailyMoreDetail
                 
                 if tempManger.getCheck() == false{
-                    destinationController.tempHigh = "\(weather[indexPath.row].highTemperature)°"
-                    destinationController.tempLow = "\(weather[indexPath.row].lowTemperature)°"
+                    targetController.tempHigh = "\(weather[indexPath.row].highTemperature)°"
+                    targetController.tempLow = "\(weather[indexPath.row].lowTemperature)°"
                 }else{
-                    destinationController.tempHigh = "\(weather[indexPath.row].highTemperatureFahrenheit)°"
-                    destinationController.tempLow = "\(weather[indexPath.row].lowTemperatureFahrenheit)°"
+                    targetController.tempHigh = "\(weather[indexPath.row].highTemperatureFahrenheit)°"
+                    targetController.tempLow = "\(weather[indexPath.row].lowTemperatureFahrenheit)°"
                 }
-                destinationController.date = "\(weather[indexPath.row].day)/\(weather[indexPath.row].month)"
-                destinationController.weekDay = weather[indexPath.row].weekDay
-                destinationController.nameMonth = weather[indexPath.row].nameMonth
-                destinationController.typeWeather = weather[indexPath.row].typeWeatherForDaily
+                targetController.date = "\(weather[indexPath.row].day)/\(weather[indexPath.row].month)"
+                targetController.weekDay = weather[indexPath.row].weekDay
+                targetController.nameMonth = weather[indexPath.row].nameMonth
+                targetController.typeWeather = weather[indexPath.row].typeWeatherForDaily
                 
-                destinationController.humidity = "\(weather[indexPath.row].humidity)%"
-                destinationController.windSpeed = "\(weather[indexPath.row].wind_speed)Km/H"
+                targetController.humidity = "\(weather[indexPath.row].humidity)%"
+                targetController.windSpeed = "\(weather[indexPath.row].wind_speed)Km/H"
             }
         }
     }

@@ -30,9 +30,7 @@ class MoreDetailViewController: UIViewController {
     var lowTemperature = " "
     var windSpeed = " "
     @IBAction func backButton(sender: AnyObject) {
-        let showFirstViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FirstView") as! FirstViewController
-        
-        self.navigationController?.pushViewController(showFirstViewController, animated: true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {

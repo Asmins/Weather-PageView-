@@ -8,15 +8,17 @@
 
 import UIKit
 import CoreLocation
+import PageMenu
 
-class FirstViewController: UIViewController,CLLocationManagerDelegate {
-    
-    @IBOutlet weak var labelForNameCity: UILabel!
-    @IBOutlet weak var menuButton: UIButton!
-    
+class FirstViewController: UIViewController,CLLocationManagerDelegate,CAPSPageMenuDelegate{
+   
     var manager = CityManager()
     var locationManager:CLLocationManager!
     var tempCheck = TemperatureManager()
+    
+    var pageMenu : CAPSPageMenu?
+    
+    @IBOutlet weak var lowView: UIView!
     
     var location: CLLocation!{
         didSet{
@@ -26,17 +28,53 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func showMapView(sender: AnyObject) {
+        let toShowMapsView = self.storyboard?.instantiateViewControllerWithIdentifier("MapsView") as! ViewControllerForMaps
+        self.navigationController?.pushViewController(toShowMapsView, animated: true)
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        navigationItem.title = manager.getName()
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 180.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         
-        navigationController?.navigationBarHidden = true
-        labelForNameCity.text = "\(manager.getName())"
         
+        var viewControllerArray : [UIViewController] = []
+        
+        let nowViewController = self.storyboard?.instantiateViewControllerWithIdentifier("NowViewController")
+        nowViewController?.title = "Now"
+        viewControllerArray.append(nowViewController!)
+        
+        let hourlyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HourlyViewController")
+        hourlyViewController?.title = "Hourly"
+        viewControllerArray.append(hourlyViewController!)
+        
+        let dailyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DailyViewController")
+        dailyViewController?.title = "Daily"
+        viewControllerArray.append(dailyViewController!)
+        
+        let menuParam: [CAPSPageMenuOption] = [.MenuItemSeparatorWidth(1.0),.MenuMargin(20.0),.MenuHeight(40.0),
+                                               .UseMenuLikeSegmentedControl(true),
+                                               .MenuItemSeparatorRoundEdges(true),
+                                               .SelectionIndicatorHeight(2.0),
+                                               .MenuItemSeparatorPercentageHeight(0.5),
+                                               .SelectionIndicatorColor(UIColor.whiteColor()),
+                                               .CenterMenuItems(true),
+                                               .SelectedMenuItemLabelColor(UIColor.whiteColor()),
+                                               .MenuItemFont(UIFont(name: "Apple SD Gothic Neo", size: 19.0)!),
+                                               .ScrollMenuBackgroundColor(UIColor(red: 180.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            )
+            
+        ]
+        pageMenu = CAPSPageMenu(viewControllers: viewControllerArray, frame: CGRectMake(0.0, 0.0,self.view.frame.size.width, UIScreen.mainScreen().bounds.size.height), pageMenuOptions: menuParam)
+        pageMenu?.delegate = self
+        self.lowView.addSubview(pageMenu!.view)
     }
     
     
@@ -101,7 +139,6 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
                                 if let number = adress[2] as? NSDictionary{
                                     if let name = number["long_name"] as? String{
                                         self.manager.saveName(name)
-                                        self.labelForNameCity.text = "\(name)"
                                     }
                                 }
                             }
@@ -118,16 +155,6 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate {
         
     }
     
-    @IBAction func showNowView(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func showHourlyView(sender: AnyObject) {
-        
-    }
-    @IBAction func showDailyView(sender: AnyObject) {
-        
-    }
     override func prefersStatusBarHidden() -> Bool {
         return true
     }

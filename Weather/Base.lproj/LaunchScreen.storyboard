@@ -23,7 +23,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDA-G3-Zxf">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-CondensedBold" family="American Typewriter" pointSize="35"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -44,14 +44,14 @@
                                 <exclude reference="rDA-G3-Zxf"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Occ-7A-fLv"/>
-                                <exclude reference="T5I-Mn-aJl"/>
-                                <exclude reference="xJN-N4-0BG"/>
+                                <exclude reference="3jZ-6q-4Yu"/>
+                                <exclude reference="o7h-Ku-6qD"/>
                                 <exclude reference="6QI-y3-XVJ"/>
                                 <exclude reference="Gs7-Vr-HvE"/>
                                 <exclude reference="aFI-ah-H0c"/>
-                                <exclude reference="3jZ-6q-4Yu"/>
-                                <exclude reference="o7h-Ku-6qD"/>
+                                <exclude reference="Occ-7A-fLv"/>
+                                <exclude reference="T5I-Mn-aJl"/>
+                                <exclude reference="xJN-N4-0BG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -60,14 +60,14 @@
                                 <include reference="rDA-G3-Zxf"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Occ-7A-fLv"/>
-                                <include reference="T5I-Mn-aJl"/>
-                                <include reference="xJN-N4-0BG"/>
+                                <include reference="3jZ-6q-4Yu"/>
+                                <include reference="o7h-Ku-6qD"/>
                                 <include reference="6QI-y3-XVJ"/>
                                 <include reference="Gs7-Vr-HvE"/>
                                 <include reference="aFI-ah-H0c"/>
-                                <include reference="3jZ-6q-4Yu"/>
-                                <include reference="o7h-Ku-6qD"/>
+                                <include reference="Occ-7A-fLv"/>
+                                <include reference="T5I-Mn-aJl"/>
+                                <include reference="xJN-N4-0BG"/>
                             </mask>
                         </variation>
                     </view>

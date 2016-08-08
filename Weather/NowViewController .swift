@@ -161,22 +161,23 @@ class NowViewController: UIViewController {
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "moreDetail"{
-            let destinationController = segue.destinationViewController as! MoreDetailViewController
+            let destinationController = segue.destinationViewController as! UINavigationController
+            let targetController = destinationController.topViewController as! MoreDetailViewController
             
             if managerTemp.getCheck() == false{
-                destinationController.highTemperature = "\(self.weatherDaily[0].highTemperature)°"
-                destinationController.lowTemperature = "\(self.weatherDaily[0].lowTemperature)°"
+                targetController.highTemperature = "\(self.weatherDaily[0].highTemperature)°"
+                targetController.lowTemperature = "\(self.weatherDaily[0].lowTemperature)°"
             }else{
-                destinationController.highTemperature = "\(self.weatherDaily[0].highTemperatureFahrenheit)°"
-                destinationController.lowTemperature = "\(self.weatherDaily[0].lowTemperatureFahrenheit)°"
+                targetController.highTemperature = "\(self.weatherDaily[0].highTemperatureFahrenheit)°"
+                targetController.lowTemperature = "\(self.weatherDaily[0].lowTemperatureFahrenheit)°"
             }
-            destinationController.date = "\(self.weatherDaily[0].day)/\(self.weatherDaily[0].month)"
-            destinationController.humidity = "\(self.weatherDaily[0].humidity)%"
-            destinationController.windSpeed = "\(self.weatherDaily[0].wind_speed)KM/H"
-            destinationController.weekDay = self.weatherDaily[0].weekDay
-            destinationController.nameMonth = self.weatherDaily[0].nameMonth
-            destinationController.typeWeather = self.weatherDaily[0].typeWeatherForDaily
-            destinationController.uvIndex = labelForUvIndex.text!
+            targetController.date = "\(self.weatherDaily[0].day)/\(self.weatherDaily[0].month)"
+            targetController.humidity = "\(self.weatherDaily[0].humidity)%"
+            targetController.windSpeed = "\(self.weatherDaily[0].wind_speed)KM/H"
+            targetController.weekDay = self.weatherDaily[0].weekDay
+            targetController.nameMonth = self.weatherDaily[0].nameMonth
+            targetController.typeWeather = self.weatherDaily[0].typeWeatherForDaily
+            targetController.uvIndex = labelForUvIndex.text!
             }
     }
     

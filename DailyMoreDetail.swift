@@ -44,8 +44,7 @@ class DailyMoreDetail: UIViewController {
     }
     
     @IBAction func backToViewController(sender: AnyObject) {
-        let toShowFirstViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FirstView") as! FirstViewController
-        self.navigationController?.pushViewController(toShowFirstViewController, animated: true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func prefersStatusBarHidden() -> Bool {

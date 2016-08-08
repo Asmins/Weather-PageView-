@@ -78,5 +78,8 @@ class ViewControllerForMaps: UIViewController,UISearchBarDelegate,LocateOnMap {
         return true
     }
     
+    @IBAction func showFirstView(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     
 }
