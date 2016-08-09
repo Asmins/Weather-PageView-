@@ -94,7 +94,6 @@ class NowViewController: UIViewController {
                 dataAboutWeather.wind_speed = foreCastDay.wind["kph"].int!
                 weatherDaily.append(dataAboutWeather)
             }
-            print(weatherDaily.isEmpty)
             
             if weatherDaily.isEmpty{
                 
