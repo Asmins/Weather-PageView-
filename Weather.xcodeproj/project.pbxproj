@@ -12,6 +12,7 @@
 		842ADF941D50BBFE0057361E /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF931D50BBFE0057361E /* CityManager.swift */; };
 		842ADF961D50BC970057361E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF951D50BC970057361E /* City.swift */; };
 		842ADF991D50BFE40057361E /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842ADF981D50BFE40057361E /* SearchResultController.swift */; };
+		8436FC081D59CEB1005EF9E5 /* ForeCastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436FC071D59CEB1005EF9E5 /* ForeCastDay.swift */; };
 		844053FB1D523EED00C347BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844053FA1D523EED00C347BC /* Images.xcassets */; };
 		8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461BB371D48EE3200332D49 /* DailyMoreDetail.swift */; };
 		84698F461D58C7120076420B /* ForeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84698F451D58C7120076420B /* ForeCast.swift */; };
@@ -41,6 +42,7 @@
 		842ADF931D50BBFE0057361E /* CityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityManager.swift; sourceTree = "<group>"; };
 		842ADF951D50BC970057361E /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		842ADF981D50BFE40057361E /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		8436FC071D59CEB1005EF9E5 /* ForeCastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeCastDay.swift; sourceTree = "<group>"; };
 		844053F61D5231D800C347BC /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = "<group>"; };
 		844053F81D52321800C347BC /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = "<group>"; };
 		844053FA1D523EED00C347BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				84698F451D58C7120076420B /* ForeCast.swift */,
 				84698F4A1D58C7FE0076420B /* SimpleForeCast.swift */,
+				8436FC071D59CEB1005EF9E5 /* ForeCastDay.swift */,
 			);
 			name = SwiftyJSON;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				84698F461D58C7120076420B /* ForeCast.swift in Sources */,
 				84698F4B1D58C7FE0076420B /* SimpleForeCast.swift in Sources */,
 				8461BB381D48EE3200332D49 /* DailyMoreDetail.swift in Sources */,
+				8436FC081D59CEB1005EF9E5 /* ForeCastDay.swift in Sources */,
 				842ADF941D50BBFE0057361E /* CityManager.swift in Sources */,
 				84E5F6061D3CDB1400290B44 /* NowViewController .swift in Sources */,
 				84E6DEB11D4F4C2F00093062 /* FirstViewController.swift in Sources */,

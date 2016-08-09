@@ -13,9 +13,7 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBOutlet weak var tableView: UITableView!
     var manager = CityManager()
     var tempManger = TemperatureManager()
-    
-    var url = "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/49.26,32.3.json"
-    
+    var apiKey = "1caf9f89914beb53"
     var weather = [WeatherDaily]()
     
     
@@ -51,7 +49,7 @@ class DailyViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func getWeather(){
-        let reques = NSURLRequest(URL: NSURL(string: "http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")!)
+        let reques = NSURLRequest(URL: NSURL(string: "http://api.wunderground.com/api/\(apiKey)/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")!)
         let urlSesion = NSURLSession.sharedSession()
         let task = urlSesion.dataTaskWithRequest(reques,completionHandler: {(data,response,error)->Void in
             if let error = error {

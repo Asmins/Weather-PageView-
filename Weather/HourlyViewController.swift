@@ -14,7 +14,7 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     var manager = CityManager()
     var tempManager = TemperatureManager()
     var weather = [WeatherHourly]()
-    
+    var apiKey = "1caf9f89914beb53"
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         weather = []
@@ -48,7 +48,7 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func getWeather(){
-        let reques = NSURLRequest(URL: NSURL(string: "http://api.wunderground.com/api/4ed7dad052717db4/hourly/q/\(manager.getLat()),\(manager.getLong()).json")!)
+        let reques = NSURLRequest(URL: NSURL(string: "http://api.wunderground.com/api/\(apiKey)/hourly/q/\(manager.getLat()),\(manager.getLong()).json")!)
         let urlSesion = NSURLSession.sharedSession()
         let task = urlSesion.dataTaskWithRequest(reques,completionHandler: {(data,response,error)->Void in
             if let error = error {
@@ -69,6 +69,8 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func parseJsonData(data:NSData) -> [WeatherHourly]{
         do{
+            
+            /*
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
             if let root = jsonResult!["hourly_forecast"] as? NSArray{
                 for data in root{
@@ -89,7 +91,7 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
                     
                     weather.append(dataAboutWeather)
                 }
-            }
+            }*/
         }catch{
             print(error)
         }

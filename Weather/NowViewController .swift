@@ -30,8 +30,10 @@ class NowViewController: UIViewController {
     
     var foreCast = ForeCast()
     var simpleForeCast = SimpleForeCast()
+    var foreCastDay = ForeCastDay()
     
     
+    var apiKey = "1caf9f89914beb53"
     
     var manager = CityManager()
     var managerTemp = TemperatureManager()
@@ -44,11 +46,6 @@ class NowViewController: UIViewController {
         let urlSesion = NSURLSession.sharedSession()
         
         let task = urlSesion.dataTaskWithRequest(request, completionHandler: {(data,respone,error) -> Void in
-            
-            let json = JSON(data:data!)
-            let forecast = json["forecast"]
-        
-            
             
             dispatch_async(dispatch_get_main_queue()) {
                 if let error = error{
@@ -69,55 +66,55 @@ class NowViewController: UIViewController {
     func parseJsonDataForWeatherDaily(data:NSData) -> [WeatherDaily ]{
         do{
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
-            if let root = jsonResult?["forecast"] as? [String:AnyObject] {
-                if let simpleforecastItem = root["simpleforecast"] as? [String:AnyObject]{
-                    if let forecastday = simpleforecastItem["forecastday"] as? [[String:AnyObject]] {
-                        
-                        for data in forecastday {
-                            let dataAboutWeather = WeatherDaily()
-                            
-                            if let date = data["date"] as? [String:AnyObject]{
-                                dataAboutWeather.day = date["day"] as! Int
-                                dataAboutWeather.month = date["month"] as! Int
-                                dataAboutWeather.nameMonth = date["monthname"] as! String
-                                dataAboutWeather.weekDay = date["weekday"] as! String
-                                
-                            }
-                            
-                            if let high = data["high"] as? [String:AnyObject]{
-                                dataAboutWeather.highTemperature = high["celsius"] as! String
-                                dataAboutWeather.highTemperatureFahrenheit = high["fahrenheit"] as! String
-                                
-                            }
-                            if let low  = data["low"] as? [String:AnyObject]{
-                                dataAboutWeather.lowTemperature = low["celsius"] as! String
-                                dataAboutWeather.lowTemperatureFahrenheit = low["fahrenheit"] as! String
-                                
-                            }
-                            if let windSpeed = data["avewind"] as? [String:AnyObject]{
-                                dataAboutWeather.wind_speed = windSpeed["kph"] as! Int
-                            }
-                            dataAboutWeather.typeWeatherForDaily = data["conditions"] as! String
-                            dataAboutWeather.humidity = data["avehumidity"] as! Int
-                            weatherDaily.append(dataAboutWeather)
-                        }
-                        self.labelForWindSpeed.text = "\(self.weatherDaily[0].wind_speed) KM/H"
-                        self.labelForHumidity.text = "\(self.weatherDaily[0].humidity)%"
-                        self.labelForTypeWeather.text = self.weatherDaily[0].typeWeatherForDaily
-                        self.labelForNextDayTypeWeather.text = self.weatherDaily[1].typeWeatherForDaily
-                        setImageView()
-                        
-                        if managerTemp.getCheck() == false{
-                            self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
-                            self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
-                            
-                        }else{
-                            self.labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperatureFahrenheit)°"
-                            self.labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperatureFahrenheit)°"
-                        }
-                    }
+        
+            let json = JSON(data:data)
+            let forecast = json["forecast"]
+            foreCast.simpleforecast = forecast["simpleforecast"]
+            simpleForeCast.forecastday = foreCast.simpleforecast["forecastday"]
+           
+            for i in 0..<simpleForeCast.forecastday.count{
+                let dataAboutWeather = WeatherDaily()
+                foreCastDay.date = simpleForeCast.forecastday[i]["date"]
+                foreCastDay.highTemp = simpleForeCast.forecastday[i]["high"]
+                foreCastDay.lowTemp = simpleForeCast.forecastday[i]["low"]
+                foreCastDay.humidity = simpleForeCast.forecastday[i]["avehumidity"]
+                foreCastDay.typeWeather = simpleForeCast.forecastday[i]["conditions"]
+                foreCastDay.wind = simpleForeCast.forecastday[i]["avewind"]
+                
+                dataAboutWeather.typeWeatherForDaily = foreCastDay.typeWeather.stringValue
+                dataAboutWeather.day = foreCastDay.date["day"].int!
+                dataAboutWeather.month = foreCastDay.date["month"].int!
+                dataAboutWeather.nameMonth = foreCastDay.date["monthname"].stringValue
+                dataAboutWeather.weekDay = foreCastDay.date["weekday"].stringValue
+                dataAboutWeather.highTemperature = foreCastDay.highTemp["celsius"].stringValue
+                dataAboutWeather.highTemperatureFahrenheit = foreCastDay.highTemp["fahrenheit"].stringValue
+                dataAboutWeather.lowTemperature = foreCastDay.lowTemp["celsius"].stringValue
+                dataAboutWeather.lowTemperatureFahrenheit = foreCastDay.lowTemp["fahrenheit"].stringValue
+                dataAboutWeather.humidity = foreCastDay.humidity.int!
+                dataAboutWeather.wind_speed = foreCastDay.wind["kph"].int!
+                weatherDaily.append(dataAboutWeather)
+            }
+            print(weatherDaily.isEmpty)
+            
+            if weatherDaily.isEmpty{
+                
+            }else{
+                if managerTemp.getCheck() == false{
+                    labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperature)°"
+                    labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperature)°"
+                    
+                }else{
+                    labelForCurrentTemperature.text = "\(self.weatherDaily[0].highTemperatureFahrenheit)°"
+                    labelForNextDayForTemperature.text = "\(self.weatherDaily[1].highTemperatureFahrenheit)°"
                 }
-            }else if let valueUvIndex = jsonResult!["value"] as? Double{
+                labelForWindSpeed.text = "\(self.weatherDaily[0].wind_speed) KM/H"
+                labelForHumidity.text = "\(self.weatherDaily[0].humidity)%"
+                labelForTypeWeather.text = weatherDaily[0].typeWeatherForDaily
+                labelForNextDayTypeWeather.text = weatherDaily[1].typeWeatherForDaily
+                setImageView()
+            }
+            
+            if let valueUvIndex = jsonResult!["value"] as? Double{
                 switch valueUvIndex {
                 case 0..<2.9 :
                     labelForUvIndex.text = "Low"
@@ -197,7 +194,7 @@ class NowViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         weatherDaily = []
-        getDataAboutWeather("http://api.wunderground.com/api/4ed7dad052717db4/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
+        getDataAboutWeather("http://api.wunderground.com/api/\(apiKey)/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
         getDataAboutWeather("http://api.owm.io/air/1.0/uvi/current?lat=\(manager.getLat())&lon=\(manager.getLong())&appid=fe96847f962cbea42c4d879c33daf010")
        
     }
