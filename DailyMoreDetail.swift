@@ -19,8 +19,6 @@ class DailyMoreDetail: UIViewController {
     @IBOutlet weak var labelForTempLow: UILabel!
     @IBOutlet weak var labelForWindSpeed: UILabel!
     
-    
-    
     var date = " "
     var weekDay = " "
     var nameMonth = " "
@@ -29,6 +27,7 @@ class DailyMoreDetail: UIViewController {
     var tempHigh = " "
     var tempLow = " "
     var windSpeed = " "
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

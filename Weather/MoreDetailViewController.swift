@@ -29,12 +29,14 @@ class MoreDetailViewController: UIViewController {
     var highTemperature = " "
     var lowTemperature = " "
     var windSpeed = " "
+    
     @IBAction func backButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         labelForTypeWeather.text = typeWeather
         labelForDate.text = date
         labelForMonth.text = nameMonth
@@ -44,15 +46,13 @@ class MoreDetailViewController: UIViewController {
         labelForWeekDay.text = weekDay
         labelForWindSpeed.text = windSpeed
         labelForHumidity.text = humidity
+        
         if labelForUvIndex.text == "N/A"{
             labelForUvIndex.textColor = UIColor.redColor()
         }
     }
     
-    
-    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
 }

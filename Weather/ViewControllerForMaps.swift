@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 
 class ViewControllerForMaps: UIViewController,UISearchBarDelegate,LocateOnMap {
-
+    
     @IBOutlet weak var viewForGoogleMaps: UIView!
     
     var googleMapsView:GMSMapView!
@@ -50,14 +50,11 @@ class ViewControllerForMaps: UIViewController,UISearchBarDelegate,LocateOnMap {
             marker.map = self.googleMapsView
             
         }
-        
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
         let place = GMSPlacesClient()
-        
-        
         place.autocompleteQuery(searchText, bounds: nil, filter: nil) { (results, error:NSError?)->Void in
             
             self.cityArray.removeAll()
@@ -72,8 +69,7 @@ class ViewControllerForMaps: UIViewController,UISearchBarDelegate,LocateOnMap {
             self.searchResultController.reloadData(self.cityArray)
         }
     }
-
-
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -81,5 +77,4 @@ class ViewControllerForMaps: UIViewController,UISearchBarDelegate,LocateOnMap {
     @IBAction func showFirstView(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
-    
 }

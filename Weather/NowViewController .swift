@@ -1,11 +1,3 @@
-//
-//  NowViewController.swift
-//  Weather
-//
-//  Created by admin on 18.07.16.
-//  Copyright © 2016 Mozi. All rights reserved.
-//
-
 import UIKit
 import SwiftyJSON
 
@@ -14,24 +6,17 @@ class NowViewController: UIViewController {
     @IBOutlet weak var labelForCurrentTemperature: UILabel!
     @IBOutlet weak var labelForTypeWeather: UILabel!
     @IBOutlet weak var labelForNextDayTypeWeather: UILabel!
-    
-    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var labelForNextDayForTemperature: UILabel!
     @IBOutlet weak var labelForHumidity: UILabel!
-    
     @IBOutlet weak var labelForUvIndex: UILabel!
-    
     @IBOutlet weak var labelForWindSpeed: UILabel!
-    
     @IBOutlet weak var imageForTypeWeather: UIImageView!
-    
     @IBOutlet weak var activitityInd: UIActivityIndicatorView!
     
     var foreCast = ForeCast()
     var simpleForeCast = SimpleForeCast()
     var foreCastDay = ForeCastDay()
-    
     
     var apiKey = "1caf9f89914beb53"
     
@@ -53,25 +38,22 @@ class NowViewController: UIViewController {
                     return
                 }
                 if let data = data{
-                    
                     self.weatherDaily = self.parseJsonDataForWeatherDaily(data)
-                    
                 }
             }
         })
-        
         task.resume()
     }
     
     func parseJsonDataForWeatherDaily(data:NSData) -> [WeatherDaily ]{
         do{
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
-        
+            
             let json = JSON(data:data)
             let forecast = json["forecast"]
             foreCast.simpleforecast = forecast["simpleforecast"]
             simpleForeCast.forecastday = foreCast.simpleforecast["forecastday"]
-           
+            
             for i in 0..<simpleForeCast.forecastday.count{
                 let dataAboutWeather = WeatherDaily()
                 foreCastDay.date = simpleForeCast.forecastday[i]["date"]
@@ -92,6 +74,7 @@ class NowViewController: UIViewController {
                 dataAboutWeather.lowTemperatureFahrenheit = foreCastDay.lowTemp["fahrenheit"].stringValue
                 dataAboutWeather.humidity = foreCastDay.humidity.int!
                 dataAboutWeather.wind_speed = foreCastDay.wind["kph"].int!
+                
                 weatherDaily.append(dataAboutWeather)
             }
             
@@ -139,7 +122,6 @@ class NowViewController: UIViewController {
     }
     
     func setImageView(){
-        
         switch weatherDaily[0].typeWeatherForDaily {
         case "Overcast":
             mainImageView.image = UIImage(named: "overCast")
@@ -162,10 +144,12 @@ class NowViewController: UIViewController {
         case "Rain":
             mainImageView.image = UIImage(named: "rain")
             imageForTypeWeather.image = UIImage(named: "RainIcon")
+        case "Mostly Cloudy":
+            mainImageView.image = UIImage(named: "cloud")
+            imageForTypeWeather.image = UIImage(named: "CloudIcon")
         default:
-            print("Maybe in latest update we add new feature")
+            print("In latest update we add new feature")
         }
-        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "moreDetail"{
@@ -179,6 +163,7 @@ class NowViewController: UIViewController {
                 targetController.highTemperature = "\(self.weatherDaily[0].highTemperatureFahrenheit)°"
                 targetController.lowTemperature = "\(self.weatherDaily[0].lowTemperatureFahrenheit)°"
             }
+            
             targetController.date = "\(self.weatherDaily[0].day)/\(self.weatherDaily[0].month)"
             targetController.humidity = "\(self.weatherDaily[0].humidity)%"
             targetController.windSpeed = "\(self.weatherDaily[0].wind_speed)KM/H"
@@ -186,24 +171,14 @@ class NowViewController: UIViewController {
             targetController.nameMonth = self.weatherDaily[0].nameMonth
             targetController.typeWeather = self.weatherDaily[0].typeWeatherForDaily
             targetController.uvIndex = labelForUvIndex.text!
-            }
+        }
     }
     
-   
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         weatherDaily = []
         getDataAboutWeather("http://api.wunderground.com/api/\(apiKey)/forecast10day/q/\(manager.getLat()),\(manager.getLong()).json")
         getDataAboutWeather("http://api.owm.io/air/1.0/uvi/current?lat=\(manager.getLat())&lon=\(manager.getLong())&appid=fe96847f962cbea42c4d879c33daf010")
-       
     }
-    
-    
-    
-    @IBAction func moreDetail(sender: AnyObject) {
-        
-    }
-    
-    
-    
 }

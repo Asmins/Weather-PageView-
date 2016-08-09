@@ -16,56 +16,38 @@ protocol LocateOnMap {
 
 class SearchResultController: UITableViewController {
     
-    
     var results: [String]!
     var delegate: LocateOnMap!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.results = Array()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier:"cellIdentifier")
-        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Table view data source
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.results.count
     }
     
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier", forIndexPath: indexPath)
-        
         cell.textLabel?.text = self.results[indexPath.row]
         return cell
     }
-    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.dismissViewControllerAnimated(true, completion: nil)
         
         let meneger = CityManager()
         let address:String! = self.results[indexPath.row].stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.symbolCharacterSet())
-        
         let url = NSURL(string: "https://maps.googleapis.com/maps/api/geocode/json?address=\(address)&sensor=false")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!){ (data,response,error)->Void in
             do{
                 if data != nil{
                     let data = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves) as! NSDictionary
-                    
                     if let results = data["results"] as? NSArray{
                         if let resultArray = results[0] as? NSDictionary{
                             
@@ -73,12 +55,11 @@ class SearchResultController: UITableViewController {
                                 if let location = geometry["location"] as? NSDictionary{
                                     if let lat = location["lat"] as? Double{
                                         meneger.saveLat(lat)
-                                       }
+                                    }
                                     if let lng = location["lng"] as? Double{
                                         meneger.saveLong(lng)
-                                       }
+                                    }
                                 }
-                                
                                 if let adress_components = resultArray["address_components"] as? NSArray {
                                     if let cityName = adress_components[0] as? NSDictionary {
                                         if let long_name = cityName["long_name"] as? String{
@@ -86,7 +67,6 @@ class SearchResultController: UITableViewController {
                                         }
                                     }
                                 }
-                                
                             }
                         }
                     }
@@ -94,7 +74,6 @@ class SearchResultController: UITableViewController {
                     let lat = data["results"]?.valueForKey("geometry")?.valueForKey("location")?.valueForKey("lat")?.objectAtIndex(0) as! Double
                     let lon = data["results"]?.valueForKey("geometry")?.valueForKey("location")?.valueForKey("lng")?.objectAtIndex(0) as! Double
                     self.delegate.locateWithLongitude(lon, andLatitude: lat, andTitle: self.results[indexPath.row])
-                    
                 }
             }
             catch{
@@ -102,7 +81,6 @@ class SearchResultController: UITableViewController {
             }
         }
         task.resume()
-        
     }
     
     func reloadData(array:[String]){
