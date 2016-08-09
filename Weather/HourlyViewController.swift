@@ -8,13 +8,18 @@
 
 import UIKit
 import SDWebImage
+import SwiftyJSON
 
 class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+   
     var manager = CityManager()
     var tempManager = TemperatureManager()
     var weather = [WeatherHourly]()
+    
     var apiKey = "1caf9f89914beb53"
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         weather = []
@@ -69,29 +74,17 @@ class HourlyViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func parseJsonData(data:NSData) -> [WeatherHourly]{
         do{
-            
-            /*
-            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
-            if let root = jsonResult!["hourly_forecast"] as? NSArray{
-                for data in root{
-                    
-                    let dataAboutWeather = WeatherHourly()
-                    
-                    
-                    if let time = data["FCTTIME"] as? NSDictionary{
-                        dataAboutWeather.hour = time["hour"] as! String
-                        
-                    }
-                    if let temp = data["temp"] as? NSDictionary{
-                        dataAboutWeather.temperature = temp["metric"] as! String
-                        dataAboutWeather.tempFahrenheit = temp["english"] as! String
-                    }
-                    dataAboutWeather.typeWeather = data["condition"] as! String
-                    dataAboutWeather.url = (data["icon_url"] as? String)!
-                    
-                    weather.append(dataAboutWeather)
-                }
-            }*/
+            let json = JSON(data:data)
+            let hourlyForeCast = json["hourly_forecast"]
+            for i in 0..<hourlyForeCast.count{
+                let data = WeatherHourly()
+                data.hour = hourlyForeCast[i]["FCTTIME"]["hour"].stringValue
+                data.temperature = hourlyForeCast[i]["temp"]["metric"].stringValue
+                data.tempFahrenheit = hourlyForeCast[i]["temp"]["english"].stringValue
+                data.typeWeather = hourlyForeCast[i]["condition"].stringValue
+                data.url = hourlyForeCast[i]["icon_url"].stringValue
+                weather.append(data)
+            }
         }catch{
             print(error)
         }
