@@ -1,14 +1,8 @@
-//
-//  MoreDetailViewController.swift
-//  Weather
-//
-//  Created by admin on 24.07.16.
-//  Copyright © 2016 Mozi. All rights reserved.
-//
-
 import UIKit
 
 class MoreDetailViewController: UIViewController {
+    
+    var viewModel:MoreDetailViewModel!
     
     @IBOutlet weak var labelForWindSpeed: UILabel!
     @IBOutlet weak var labelForHumidity: UILabel!
@@ -20,36 +14,23 @@ class MoreDetailViewController: UIViewController {
     @IBOutlet weak var labelForDate: UILabel!
     @IBOutlet weak var labelForWeekDay: UILabel!
     
-    var date = " "
-    var weekDay = " "
-    var nameMonth = " "
-    var typeWeather = " "
-    var uvIndex = " "
-    var humidity =  " "
-    var highTemperature = " "
-    var lowTemperature = " "
-    var windSpeed = " "
     
     @IBAction func backButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        labelForTypeWeather.text = typeWeather
-        labelForDate.text = date
-        labelForMonth.text = nameMonth
-        labelForUvIndex.text = uvIndex
-        labelForLowTemperature.text = lowTemperature
-        labelForHighTemperature.text = highTemperature
-        labelForWeekDay.text = weekDay
-        labelForWindSpeed.text = windSpeed
-        labelForHumidity.text = humidity
-        
-        if labelForUvIndex.text == "N/A"{
-            labelForUvIndex.textColor = UIColor.redColor()
-        }
+        labelForTypeWeather.text = viewModel.typeWeather
+        labelForWindSpeed.text = viewModel.windSpeed
+        labelForWeekDay.text = viewModel.weekDay
+        labelForDate.text = viewModel.date
+        labelForMonth.text = viewModel.nameMonth
+        labelForUvIndex.text = viewModel.uvIndex
+        labelForHumidity.text = viewModel.humidity
+        labelForLowTemperature.text = viewModel.lowTemperature
+        labelForHighTemperature.text = viewModel.highTemperature
     }
     
     override func prefersStatusBarHidden() -> Bool {

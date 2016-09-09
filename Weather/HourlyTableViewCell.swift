@@ -1,21 +1,21 @@
 //
-//  CustomTableViewCell.swift
+//  HourlyTableViewCell.swift
 //  Weather
 //
-//  Created by admin on 18.07.16.
+//  Created by admin on 09.09.16.
 //  Copyright © 2016 Mozi. All rights reserved.
 //
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var labelForTemperature: UILabel!
-    @IBOutlet weak var labelForTypeWeather: UILabel!
-    @IBOutlet weak var imageForWeather: UIImageView!
-    @IBOutlet weak var labelForHour: UILabel!
+class HourlyTableViewCell: UITableViewCell {
     
-    var url = " "
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var typeWeatherLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+
+    var url = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

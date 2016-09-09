@@ -19,27 +19,19 @@ class DailyMoreDetail: UIViewController {
     @IBOutlet weak var labelForTempLow: UILabel!
     @IBOutlet weak var labelForWindSpeed: UILabel!
     
-    var date = " "
-    var weekDay = " "
-    var nameMonth = " "
-    var typeWeather = " "
-    var humidity = " "
-    var tempHigh = " "
-    var tempLow = " "
-    var windSpeed = " "
+    var viewModel:DailyMoreDetailViewModel!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        labelForDate.text = date
-        labelForWeekDay.text = weekDay
-        labelForNameMonth.text = nameMonth
-        labelForTypeWeather.text = typeWeather
-        labelForHumidity.text = humidity
-        labelForTempHigh.text = tempHigh
-        labelForTempLow.text = tempLow
-        labelForWindSpeed.text = windSpeed
-        
+        labelForDate.text = self.viewModel.date
+        labelForWeekDay.text = self.viewModel.weekDay
+        labelForNameMonth.text = self.viewModel.nameMonth
+        labelForTypeWeather.text = self.viewModel.typeWeather
+        labelForHumidity.text = self.viewModel.humidity
+        labelForTempHigh.text = self.viewModel.tempHigh
+        labelForTempLow.text = self.viewModel.tempLow
+        labelForWindSpeed.text = self.viewModel.windSpeed
     }
     
     @IBAction func backToViewController(sender: AnyObject) {
